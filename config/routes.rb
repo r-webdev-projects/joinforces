@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  match '/about' => 'static_pages#about', via: 'get'
+  match '/contact' => 'static_pages#contact', via: 'get'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
