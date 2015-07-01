@@ -3,65 +3,94 @@
 <head>
   <title>The page you were looking for doesn't exist (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <style>
-  body {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
+  <link href='http://fonts.googleapis.com/css?family=Rock+Salt|Inconsolata' rel='stylesheet' type='text/css'>
+  <style type='text/css'>
+    html, body {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background: #EFEFEF url(assets/404/wallpaper.gif) repeat-x;
+      background-size: auto 100%;
+      position: relative;
+    }
+    .room {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      text-align: center;
+    }
+    .room > img {
+      max-height: 100%;
+      position: relative;
+      left: 100%;
+      margin-left: -200%;
+    }
 
-  div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
+    .desk {
+      text-align: center;
+      position: absolute;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    }
+    .display {
+      margin: 0 auto;
+      text-align: center;
+      overflow: hidden;
+      font-size: 0;;
+    }
+    .display img {
+      position: relative;
+      left: 100%;
+      margin-left: -200%;
+    }
 
-  div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
-
-  h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
-
-  div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+    .sign {
+      position: absolute;
+      top: 1vh;
+      left: 1vh;
+      z-index: 100;
+      text-align: left;
+    }
+    .sign h1, h2 {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inconsolata', monospace;
+      line-height: 1em;
+      text-shadow: 1px 1px 1px red;
+    }
+    .sign h1 {
+      color: white;
+      font-weight: normal;
+      font-size: 8vh;
+      text-transform: uppercase;
+    }
+    .sign h2 {
+      color: white;
+      font-size: 5vh;
+    }
   </style>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="assets/404/giphy.js"></script>
+
 </head>
 
 <body>
-  <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
+  <div class='room'>
+
+    <div class="sign">
+      <h1></h1>
+      <h2></h2>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
+
+    <img src="assets/404/desk.gif" class='room-bk'>
+    <div class="desk">
+      <div class="display"></div>
+    </div>
   </div>
+
 </body>
 </html>
