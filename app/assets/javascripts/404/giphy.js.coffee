@@ -17,6 +17,7 @@ jQuery ->
     'lol'
     'riff raff'
   ]
+
   messages = [
     "We made a mistake.  We'll get it fixed."
     "Page Not Found"
@@ -36,7 +37,6 @@ jQuery ->
   $('.sign h2').html(message)
 
   jsonURL = "http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=" + encodeURIComponent(keyword)
-  console.log jsonURL
 
   $.getJSON jsonURL, (data) ->
     url = data.data.image_url
