@@ -11,6 +11,9 @@ gem 'jquery-rails'
 gem 'twitter-bootstrap-rails'
 gem 'slim'
 
+# For inline SVGs
+gem 'inline_svg'
+
 group :development, :test do
 
   gem 'byebug'
