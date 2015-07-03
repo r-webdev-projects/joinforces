@@ -14,7 +14,7 @@
       <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
       <!-- Stylesheets -->
-      <%= stylesheet_link_tag 'application', media: 'all' %>
+      <%= stylesheet_link_tag :application, media: 'all' %>
 
       <!-- Javascript -->
       <%= javascript_include_tag 'modernizr.min' %>
@@ -26,7 +26,11 @@
   </head>
   <body>
 
+    <%= render 'shared/header' %>
+
     <%= yield %>
+
+    <%= render 'shared/header' %>
 
   </body>
 </html>
