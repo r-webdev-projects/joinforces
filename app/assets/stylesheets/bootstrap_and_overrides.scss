@@ -1,2 +1,24 @@
 @import 'twitter-bootstrap-static/bootstrap';
 @import 'twitter-bootstrap-static/fontawesome';
+
+body {
+  background: #f3f4f5;
+}
+
+// Make navigation & page header background white
+.navbar-default, ._page-header {
+  background-color: white;
+}
+.navbar {
+  margin-bottom: 0;
+}
+._page-header {
+  border-bottom: 1px solid #e7e7e7;
+  padding: 0 0 15px 0;
+  button {
+    margin: 30px auto 10px auto;
+  }
+  *[class^="col"] {
+    padding: 0;
+  }
+}
