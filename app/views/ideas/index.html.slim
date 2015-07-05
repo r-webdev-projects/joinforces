@@ -3,8 +3,8 @@
     .headline.col-xs-12.col-sm-9
       h1 Great minds discuss ideas. Average minds discuss events. Small minds discuss people.
     .call-to-action.col-xs-12.col-sm-3.text-center
-      button.btn.btn-default.btn-lg type="button" class="btn btn-default btn-lg"
-        | Post an idea
+      button.btn.btn-default.btn-lg type="button"
+        = link_to 'Post an idea', new_idea_path
 
 .listing.ideas.container
   - @ideas.each do |idea|
