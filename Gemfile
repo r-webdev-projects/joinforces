@@ -11,9 +11,11 @@ gem 'jquery-rails'
 gem 'twitter-bootstrap-rails'
 
 group :development, :test do
-
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
 
+group :production do
+  gem 'rails_12factor'
+end
