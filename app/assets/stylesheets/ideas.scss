@@ -1,11 +1,12 @@
 .ideas.listing {
-  margin-top:20px;
+  margin-top: 20px;
 }
 
 .favorite-icon {
   &:hover {
     cursor: pointer;
-    g polygon {
+
+    polygon {
       stroke: #f3c967;
     }
   }
