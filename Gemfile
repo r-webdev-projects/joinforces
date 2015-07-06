@@ -10,6 +10,9 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'twitter-bootstrap-rails'
 
+# For friendlier URLs
+gem 'friendly_id'
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
