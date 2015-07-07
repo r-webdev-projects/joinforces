@@ -153,8 +153,8 @@ PLATFORMS
 DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
-  inline_svg
   friendly_id
+  inline_svg
   jquery-rails
   pg
   rails (= 4.2.1)
