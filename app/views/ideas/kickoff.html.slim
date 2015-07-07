@@ -1,0 +1,22 @@
+= form_for(@idea) do |f|
+  - if @idea.errors.any?
+    #error_explanation
+      h2 
+        = pluralize(@idea.errors.count, "error") 
+        | prohibited this idea from being saved:
+
+      ul
+      - @idea.errors.full_messages.each do |message|
+        li = message
+      
+  
+  .form-group
+    = f.label :description, 'Interesting.  Tell me more.'
+    span.help-block 
+      | How will this product work? What technology might it use? Who will use it? What problem does it solve for them? How will you monetize?</span>
+    = f.text_area :description, class: 'form-control', rows: 6
+  
+
+  .actions
+    = f.submit
+  

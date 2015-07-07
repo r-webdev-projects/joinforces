@@ -1,5 +1,5 @@
 class IdeasController < ApplicationController
-  before_action :set_idea, only: [:show, :edit, :update, :destroy]
+  before_action :set_idea, only: [:show, :edit, :update, :destroy, :kickoff]
 
   # GET /ideas
   def index
@@ -24,7 +24,7 @@ class IdeasController < ApplicationController
     @idea = Idea.new(idea_params)
 
     if @idea.save
-      redirect_to @idea, notice: 'Idea was successfully created.'
+      redirect_to idea_kickoff_path(@idea),  notice: 'Idea was successfully created.'
     else
       render :new
     end
@@ -43,6 +43,9 @@ class IdeasController < ApplicationController
   def destroy
     @idea.destroy
     redirect_to ideas_url, notice: 'Idea was successfully destroyed.'
+  end
+
+  def kickoff
   end
 
   private

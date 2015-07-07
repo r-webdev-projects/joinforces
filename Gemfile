@@ -14,10 +14,15 @@ gem 'slim'
 # For inline SVGs
 gem 'inline_svg'
 
-group :development, :test do
+# For friendlier URLs
+gem 'friendly_id'
 
+group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
 
+group :production do
+  gem 'rails_12factor'
+end
