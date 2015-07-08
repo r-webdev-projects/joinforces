@@ -20,8 +20,7 @@
  |   |– _forms.scss       # Forms
  |
  |– pages/
- |   |– _home.scss        # Home specific styles
- |   |– _contact.scss     # Contact specific styles
+ |   |– _ideas.scss       # Idea pages specific styles
  |
  |– utils/
  |   |– _variables.scss   # Sass Variables
@@ -56,6 +55,4 @@
 // @import 'components/social';
 // @import 'components/tooltips';
 
-@import 'pages/about';
-@import 'pages/contact';
 @import 'pages/ideas';
