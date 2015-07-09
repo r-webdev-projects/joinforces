@@ -1,0 +1,19 @@
+<% content_for :head do %>
+  <%= javascript_include_tag 'static_pages/signup' %>
+<% end %>
+
+<div class="row">
+  <div class="col-xs-12">
+      <form action="" class="signupForm">
+        <h1>Sign Up</h1>
+        <input type="text" class="name" placeholder="Full Name">
+        <input type="email" class="email" placeholder="Email">
+        <input type="password" class="password" placeholder="Password">
+        <label><input type="checkbox" class="checkbox" value="agree"> &nbsp; I agree to the terms of service and privacy policy.</label>
+        <section class="submit">
+          <button>Sign Up</button>
+        </section>
+        <label>Already have an account? <a href="">Log in!</a></label>
+      </form>
+  </div>
+</div>
