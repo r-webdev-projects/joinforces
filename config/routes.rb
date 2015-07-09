@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   match '/about' => 'static_pages#about', via: 'get'
   match '/contact' => 'static_pages#contact', via: 'get'
+  match '/signup' => 'static_pages#signup', via: 'get'
 
   resources :ideas do
     get '/kickoff' => 'ideas#kickoff', as: :kickoff
