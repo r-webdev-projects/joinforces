@@ -1,0 +1,125 @@
+.signupForm {
+	border:2px solid black;
+	border-radius: 5px;
+	padding:30px;
+	margin: 30px auto;
+  width: 400px;
+  text-align: center;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea {
+  width: 100%;
+  display: block;
+  background: transparent;
+  border: 1px solid black;
+  padding: 5px;
+  margin: 10px auto;
+  border-radius: 1px;
+  font-size: 18px;
+  
+  &:focus {
+    outline: none;
+    border: 1px solid $dark-blue;
+  }
+}
+
+input[type="submit"]{
+  margin:20px auto;
+  display: inline-block;
+  width: 100%;
+  height: 40px;
+  border: 2px solid $dark-blue;
+  border-radius: 5px;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 700;
+  cursor: pointer;
+  background: $dark-blue;
+  color: white;
+    
+  &:hover{
+    background: transparent;
+    color: $dark-blue;
+  }
+    
+  &:active {
+    border: 2px solid darken($dark-blue, 5%);
+    color: darken($dark-blue, 10%);
+  }
+  
+}
+
+section.submit button {
+  margin:20px auto;
+  display: inline-block;
+  width: 100%;
+  height: 40px;
+  border: 2px solid $dark-blue;
+  border-radius: 5px;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 700;
+  cursor: pointer;
+  background: $dark-blue;
+  color: white;
+    
+  &:hover{
+    background: transparent;
+    color: $dark-blue;
+  }
+    
+  &:active {
+    border: 2px solid darken($dark-blue, 5%);
+    color: darken($dark-blue, 10%);
+  }
+}
+
+.checkbox {
+	  display:inline-block;
+}
+
+.idea_page{
+	  border:2px solid black;
+	  border-radius: 5px;
+	  padding:30px;
+	  margin: 30px auto;
+    min-width: 600px;
+    text-align: center;
+    
+    p{
+      font-weight:400;
+      float: left;
+    }
+    
+    a{
+      clear: both;
+      margin:20px auto;
+      display: inline-block;
+      width: 150px;
+      height: 40px;
+      border: 2px solid $dark-blue;
+      border-radius: 5px;
+      font-size: 20px;
+      line-height: 30px;
+      font-weight: 700;
+      cursor: pointer;
+      background: $dark-blue;
+      color: white;
+      text-decoration: none;
+    
+        &:hover{
+          background: transparent;
+          color: $dark-blue;
+  }
+    
+        &:active {
+          border: 2px solid darken($dark-blue, 5%);
+          color: darken($dark-blue, 10%);
+  }
+    }
+}
+
+  

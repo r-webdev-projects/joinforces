@@ -25,12 +25,12 @@
 
   </head>
   <body>
+    <div class="container">
+      <%= render 'shared/navigation' %>
 
-    <%= render 'shared/navigation' %>
+      <%= yield %>
 
-    <%= yield %>
-
-    <%= render 'shared/footer' %>
-
+      <%= render 'shared/footer' %>
+    </div>
   </body>
 </html>

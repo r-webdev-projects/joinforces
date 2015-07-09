@@ -1,5 +1,3 @@
-@charset 'utf-8';
-
 /**********************\
  *      Variables     *
 \**********************/
@@ -7,10 +5,12 @@
 $white:       darken(white, 2%);
 $black:       lighten(black, 27%);
 
-$header-height: 65px;
-$header-max-width: 1200px;
-$header-nav-link-padding: 0 24px;
-$header-background: $blue;
+$font: Roboto, Arial, sans-serif;
+$alt-font: Montserrat, Arial, sans-serif;
+
+$footer-max-width: 1200px;
+$footer-nav-link-padding: 0 24px;
+$footer-background: $blue;
 
 /**********************\
  *       Styles       *
@@ -19,74 +19,67 @@ $header-background: $blue;
 *,
 *:before,
 *:after {
-
   box-sizing: border-box;
-
 }
 
 /**********************\
- *       Header       *
+ *       footer       *
 \**********************/
 
-.site--header {
-  background: $blue;
-  height: $header-height;
-  
-  .header--content {
+.site--footer {
+  background: $footer-background;
 
+
+  .footer--content {
     display: table;
 
     height: 100%;
-
     margin: 0 auto;
-    max-width: $header-max-width;
+    max-width: $footer-max-width;
     width: 100%;
 
-    .header--left,
-    .header--right {
+    .footer--left,
+    .footer--right {
 
       display: table-cell;
-
       vertical-align: middle;
 
       }
 
-    .header--left {
+    .footer--left {
 
-      padding: 2px;
+      padding-top:10px;
 
     }
-    
-    .branding{
-      margin-left: 5px;
-    }
 
-    .header--right {
+    .footer--right {
 
       text-align: right;
-
+      
       .site-nav {
 
         a {
 
           color: $black;
           display: inline-block;
-
-          font-weight: 700;
-          line-height: $header-height;
+          font-family: $font;
+          font-weight: 500;
           margin-right: 7px;
-          font-size: 1.5em;
-          padding: $header-nav-link-padding;
+          padding: $footer-nav-link-padding;
           text-decoration: none;
-          
 
-          &:hover {
+            &:hover {
 
-              background: darken($header-background, 10%);
+              background: darken($footer-background, 10%);
+
+            }
 
           }
+
         }
+
       }
+
     }
-  }
+
 }

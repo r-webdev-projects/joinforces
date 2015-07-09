@@ -27,14 +27,14 @@
  |   |– _functions.scss   # Sass Functions
  |   |– _mixins.scss      # Sass Mixins
  |   |– _helpers.scss     # Class & placeholders helpers
+ |   |– _colors.scss      # Colors
  |
  |– vendors/
  |   |– _bootstrap_and_overrides.scss   # Boostrap
  */
 
-@import "vendors/bootstrap_and_overrides";
-
 // @import 'utils/functions';
+@import 'utils/colors';
 // @import 'utils/variables';
 // @import 'utils/mixins';
 // @import 'utils/helpers';
@@ -43,13 +43,13 @@
 @import 'base/base';
 @import 'base/typography';
 
-// @import 'layout/grid';
+@import 'layout/grid';
 @import 'layout/navigation';
 // @import 'layout/header';
-// @import 'layout/footer';
-// @import 'layout/forms';
+@import 'layout/footer';
 
-// @import 'components/alerts';
+
+@import 'components/form';
 // @import 'components/breadcrumbs';
 // @import 'components/buttons';
 // @import 'components/social';
