@@ -10,12 +10,14 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'twitter-bootstrap-rails'
 gem 'slim'
+gem "autoprefixer-rails"
 
 # For inline SVGs
 gem 'inline_svg'
 
 # For friendlier URLs
 gem 'friendly_id'
+
 
 group :development, :test do
   gem 'byebug'
