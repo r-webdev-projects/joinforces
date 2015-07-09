@@ -1,5 +1,58 @@
-@import "bootstrap_and_overrides";
+/**
+ stylesheets/
+ |– base/
+ |  |– _normalize.scss   # normalize.css v3.0.2
+ |  |– _base.scss        # Base styles and defaults
+ |  |– _typography.scss  # Typography rules
+ |
+ |– components/
+ |   |– _alerts.scss      # Alerts
+ |   |– _breadcrumbs.scss # Breadcrumbs
+ |   |– _buttons.scss     # Buttons
+ |   |– _social.scss      # Share/social buttons
+ |   |– _tooltips.scss    # Tooltips
+ |
+ |– layout/
+ |   |– _grid.scss        # Grid system
+ |   |– _navigation.scss  # Navigation
+ |   |– _header.scss      # Header
+ |   |– _footer.scss      # Footer
+ |   |– _forms.scss       # Forms
+ |
+ |– pages/
+ |   |– _ideas.scss       # Idea pages specific styles
+ |
+ |– utils/
+ |   |– _variables.scss   # Sass Variables
+ |   |– _functions.scss   # Sass Functions
+ |   |– _mixins.scss      # Sass Mixins
+ |   |– _helpers.scss     # Class & placeholders helpers
+ |
+ |– vendors/
+ |   |– _bootstrap_and_overrides.scss   # Boostrap
+ */
 
-@import "shared/navigation";
+@import "vendors/bootstrap_and_overrides";
 
-@import "ideas";
+// @import 'utils/functions';
+// @import 'utils/variables';
+// @import 'utils/mixins';
+// @import 'utils/helpers';
+
+@import 'base/normalize';
+@import 'base/base';
+@import 'base/typography';
+
+// @import 'layout/grid';
+@import 'layout/navigation';
+// @import 'layout/header';
+// @import 'layout/footer';
+// @import 'layout/forms';
+
+// @import 'components/alerts';
+// @import 'components/breadcrumbs';
+// @import 'components/buttons';
+// @import 'components/social';
+// @import 'components/tooltips';
+
+@import 'pages/ideas';

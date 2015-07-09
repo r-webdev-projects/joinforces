@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   match '/about' => 'static_pages#about', via: 'get'
   match '/contact' => 'static_pages#contact', via: 'get'
 
-  resources :ideas
+  resources :ideas do
+    get '/kickoff' => 'ideas#kickoff', as: :kickoff
+  end
   root 'ideas#index'
 
 

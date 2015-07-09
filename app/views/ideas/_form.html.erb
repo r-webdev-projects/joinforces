@@ -10,15 +10,19 @@
       </ul>
     </div>
   <% end %>
+  <br>
+  <div class="form-group">
+    <%= f.label :title, 'What\'s your 1 sentence pitch?'%>
+    <span class="help-block">If you only had 15 seconds to describe your idea, what would you say? Be concise and direct.</span>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+  <div class="form-group">
+    <%= f.label :description, 'Interesting.  Tell me more.' %>
+    <span class="help-block">How will this product work? What technology might it use? Who will use it? What problem does it solve for them? How will you monetize?</span>
+    <%= f.text_area :description, class: 'form-control', rows: 6 %>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

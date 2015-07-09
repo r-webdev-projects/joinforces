@@ -1,0 +1,32 @@
+.container
+  .new-idea-form.col-xs-6
+    .header-image.text-center
+      = inline_svg 'shared/bulb.svg'
+    
+    br
+
+    = form_for(@idea) do |f|
+      - if @idea.errors.any?
+        #error_explanation
+          h2 
+            = pluralize(@idea.errors.count, "error") 
+            | prohibited this idea from being saved:
+
+          ul
+          - @idea.errors.full_messages.each do |message|
+            li = message
+          
+      
+      .form-group
+        = f.label 'Start a conversation by asking a question'
+        span.help-block 
+          | You could ask about potential names, competing products, or critical feedback. Make sure to include helpful details about the problem that your idea solves.
+        
+        // This is set to duplicate the description for the time being.  
+        // Once the comments functionality is built, this will be replaced 
+        // by the first comment
+        = f.text_area :description, class: 'form-control', rows: 6
+      
+      .actions
+        = f.submit "Let's get started"
+  

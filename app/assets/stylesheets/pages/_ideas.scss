@@ -1,0 +1,23 @@
+.ideas.listing {
+  margin-top: 20px;
+}
+
+.favorite-icon {
+  &:hover {
+    cursor: pointer;
+
+    polygon {
+      stroke: #f3c967;
+    }
+  }
+}
+
+.new-idea-form {
+  background: #fff;
+  border:1px solid #e7e7e7;
+  border-radius: 4px;
+  margin: 20px auto;
+  float: none;
+  padding: 30px;
+
+}

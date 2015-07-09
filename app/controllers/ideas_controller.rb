@@ -1,5 +1,5 @@
 class IdeasController < ApplicationController
-  before_action :set_idea, only: [:show, :edit, :update, :destroy]
+  before_action :set_idea, only: [:show, :edit, :update, :destroy, :kickoff]
 
   # GET /ideas
   def index
@@ -24,7 +24,7 @@ class IdeasController < ApplicationController
     @idea = Idea.new(idea_params)
 
     if @idea.save
-      redirect_to @idea, notice: 'Idea was successfully created.'
+      redirect_to idea_kickoff_path(@idea),  notice: 'Idea was successfully created.'
     else
       render :new
     end
@@ -45,10 +45,14 @@ class IdeasController < ApplicationController
     redirect_to ideas_url, notice: 'Idea was successfully destroyed.'
   end
 
+  def kickoff
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_idea
-      @idea = Idea.find(params[:id])
+      @idea = Idea.find(params[:id]) if params[:id].present?
+      @idea = Idea.find(params[:idea_id]) if params[:id].blank? && params[:idea_id].present?
     end
 
     # Only allow a trusted parameter "white list" through.
