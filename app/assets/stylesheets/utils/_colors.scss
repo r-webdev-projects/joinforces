@@ -1,9 +1,49 @@
-// Primary Colors
-$red:#fd6d79;
-$blue:#d9f8ff;
-$green:#4ff6a4;
+// -----------------------------------------------------------------------------
+// Primary Palette
+// -----------------------------------------------------------------------------
 
-//Secondary Colors
-$dark-red:#E15E69;
-$dark-blue:#83CADA;
-$dark-green:#48DC95;
+$turquoise:      #1ABC9C !default;
+$emerald:        #2ECC71 !default;
+$peter-river:    #3498DB !default;
+$amethyst:       #9B59B6 !default;
+$wet-asphalt:    #34495E !default;
+$sunflower:      #F1C40F !default;
+$carrot:         #E67E22 !default;
+$alizarin:       #E74C3C !default;
+$clouds:         #ECF0F1 !default;
+$concrete:       #95A5A6 !default;
+
+// -----------------------------------------------------------------------------
+// Secondary Palette
+// -----------------------------------------------------------------------------
+$green-sea:      #16A085 !default;
+$nephritis:      #27AE60 !default;
+$belize-hole:    #2980B9 !default;
+$wisteria:       #8E44AD !default;
+$midnight-blue:  #2C3E50 !default;
+$citrus:         #F39C12 !default;
+$pumpkin:        #D35400 !default;
+$pomegranate:    #C0392B !default;
+$silver:         #BDC3C7 !default;
+$asbestos:       #7F8C8D !default;
+
+// -----------------------------------------------------------------------------
+// Common Names
+// -----------------------------------------------------------------------------
+$green:          $emerald;
+$blue:           $peter-river;
+$purple:         $amethyst;
+$yellow:         $sunflower;
+$orange:         $citrus;
+$red:            $alizarin;
+$gray:           $silver;
+$dark-gray:      $asbestos;
+$dark-blue:      $midnight-blue;
+
+// -----------------------------------------------------------------------------
+// Color list
+// -----------------------------------------------------------------------------
+
+$color-palette-names: turquoise emerald peter-river amethyst wet-asphalt sunflower carrot alizarin clouds concrete green-sea nephritis belize-hole wisteria midnight-blue citrus pumpkin pomegranate silver asbestos;
+$color-palette: $turquoise $emerald $peter-river $amethyst $wet-asphalt $sunflower $carrot $alizarin $clouds $concrete $green-sea $nephritis $belize-hole $wisteria $midnight-blue $citrus $pumpkin $pomegranate $silver $asbestos;
+
