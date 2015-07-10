@@ -1,0 +1,45 @@
+button {
+    border: 3px solid $blue;
+    border-radius: 8px;
+    background: $blue;
+    padding: 10px 20px;
+    margin: 5px;
+    color: white;
+    transition: all .2s linear;
+    position: relative;
+}
+
+button:hover,
+button.hover {
+    background: transparent;
+    color: $blue;
+}
+
+button:active,
+button.active {
+    background: transparent;
+    border-color: darken($blue, 15%);
+    color: darken($blue, 15%);
+}
+
+.button__small {
+    font-size: 14px;
+    font-weight: 500;
+    border-width:2px;
+}
+
+.button__standard {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.button__huge {
+    font-size: 24px;
+    font-weight: 700;
+    border-width:5px;
+}
+
+button > .icon{
+    float: right;
+    display: block;
+}
