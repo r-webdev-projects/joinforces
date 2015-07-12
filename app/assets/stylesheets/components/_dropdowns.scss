@@ -1,86 +1,8 @@
-.menu .arrow {
-  font-size: 0.5em;
-}
-
-.menu-wrap {
-  width: 100%;
-}
-
-.menu {
-  margin: 0 auto;
-  width: 500px;
-  background: $turquoise;
-}
-
-.menu li {
-  margin: 0;
-  list-style: none;
-  background: $turquoise;
-}
-
-.menu a {
-  color: $white;
-  text-decoration: none;
-}
-
-.menu li:hover > a {
-  color: $white;
-}
-
-.menu > ul > li {
-  float: left;
-  display: inline-block;
-  position: relative;
-}
-
-.menu > ul > li > a {
-  display: inline-block;
-  padding: 12px 40px;
-}
-
-.menu > ul > li:hover > a {
-  background: #00D0B3;
-}
-
-.menu li:hover .dropdown__myaccount__menu {
-  z-index: 1;
-  opacity: 1;
-}
-
-.dropdown__myaccount__menu {
-  width: 160%;
-  padding: 10px;
-  position: absolute;
-  top: 100%;
-  right: 0;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity linear 0.15s;
-  background: $turquoise;
-}
-
-.dropdown__myaccount__menu li {
-  display: block;
-  font-size: 16px;
-}
-
-.dropdown__myaccount__menu li a {
-  display: block;
-  padding: 10px 30px;
-}
-
-.dropdown__myaccount__menu li a:hover {
-  background: #00D0B3;
-}
-
-.clear {
-  clear: both;
-}
-
 /* Defaults in other stylesheets not yet built */
 a {
   text-decoration: none;
 }
+
 .dropdown {
   width: 300px;
 }
@@ -92,7 +14,6 @@ a {
   background: $turquoise;
   text-align: center;
   
-
   .dropdown__label {
     display: block;
     color: white;
@@ -107,13 +28,16 @@ a {
       top: 0;
       line-height: 38px;
     }
+    
     &:hover {
       cursor: pointer;
     }
   }
+  
   .dropdown__menu-item {
     list-style: none;
   }
+  
   .dropdown__menu-item-link {
     display: block;
     padding: 10px;
@@ -131,7 +55,6 @@ a {
   padding: 0;
   list-style: none;
   background: $green-sea;
-  
   .dropdown__menu-item {
     text-align: left;
   }
