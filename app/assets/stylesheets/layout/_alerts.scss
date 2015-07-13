@@ -1,5 +1,5 @@
 .alert {
-  color: $gray;
+  color: $black;
   padding: 10px;
   margin: 10px;
   border-radius: 10px;
@@ -7,21 +7,27 @@
 }
 
 .alert-success {
-  background: $emerald;
-  border: 1px solid $gray;
+  background: $white;
+  border: 1px solid $emerald;
 }
 
 .alert-notice {
-  background: $clouds;
-  border: 1px solid $gray;
+  background: $white;
+  border: 1px solid $peter-river;
 }
 
 .alert-warning {
-  background: $sunflower;
-  border: 1px solid $gray;
+  background: $white;
+  border: 1px solid $sunflower;
 }
 
 .alert-danger {
-  background: $amethyst;
-  border: 1px solid $gray;
+  background: $white;
+  border: 1px solid $alizarin;
+}
+
+.close-alert {
+  float: right;
+  font-size: 1.2em;
+  line-height: 15px;
 }
