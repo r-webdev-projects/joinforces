@@ -1,33 +1,35 @@
 .alert {
-  color: $black;
-  padding: 10px;
-  margin: 10px;
   border-radius: 10px;
+  color: $black;
+  margin: 10px;
+  padding: 15px;
   width: 700px;
 }
 
 .alert-success {
   background: $white;
-  border: 1px solid $emerald;
+  border: 1px solid $green;
 }
 
 .alert-notice {
   background: $white;
-  border: 1px solid $peter-river;
+  border: 1px solid $blue;
 }
 
 .alert-warning {
   background: $white;
-  border: 1px solid $sunflower;
+  border: 1px solid $yellow;
 }
 
 .alert-danger {
   background: $white;
-  border: 1px solid $alizarin;
+  border: 1px solid $red;
 }
 
 .close-alert {
+  color: $gray;
   float: right;
-  font-size: 1.2em;
+  font-size: 1.4em;
   line-height: 15px;
+  text-decoration: none;
 }
