@@ -1,0 +1,27 @@
+.alert {
+  color: $gray;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  width: 700px;
+}
+
+.alert-success {
+  background: $emerald;
+  border: 1px solid $gray;
+}
+
+.alert-notice {
+  background: $clouds;
+  border: 1px solid $gray;
+}
+
+.alert-warning {
+  background: $sunflower;
+  border: 1px solid $gray;
+}
+
+.alert-danger {
+  background: $amethyst;
+  border: 1px solid $gray;
+}
