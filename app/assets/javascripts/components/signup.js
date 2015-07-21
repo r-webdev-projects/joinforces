@@ -1,7 +1,9 @@
-alert('test1');
+$( document ).ready(function() {
 
-$(".signupForm").submit(function(event) {
+  $(".signupForm").submit(function(event) {
 
-  alert('test');
+    alert('test');
+
+  });
 
 });
