@@ -1,0 +1,27 @@
+input[type=text] {
+    width: 300px;
+    padding: 8px 10px;
+    border: 2px solid $gray;
+    border-radius: 5px;
+    font-size: 16px;
+    color: $dark-gray;
+    display:inline;
+    margin:10px;
+    &:active, &:focus {
+        border: 2px solid $dark-gray;
+    }
+    &:disabled {
+        background: lighten($gray, 20%);
+        &:active {
+            border-color: $gray;
+        }
+    }
+    &.success {
+        border: 2px solid $green;
+        color:$green;
+    }
+    &.error {
+        border: 2px solid $red;
+        color:$red;
+    }
+}
