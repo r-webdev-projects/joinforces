@@ -1,45 +1,46 @@
 button {
-    border: 3px solid $blue;
-    border-radius: 8px;
-    background: $blue;
-    padding: 10px 20px;
-    margin: 5px;
-    color: white;
-    transition: all .2s linear;
-    position: relative;
+  background: $blue;
+  border: 1px solid $blue;
+  border-radius: 8px;
+  color: $white;
+  font-weight: 400;
+  margin-bottom: 0;
+  position: relative;
+  text-align: center;
+  transition: all .2s linear;
 }
 
 button:hover,
 button.hover {
-    background: transparent;
-    color: $blue;
+  background: transparent;
+  color: $blue;
 }
 
 button:active,
 button.active {
-    background: transparent;
-    border-color: darken($blue, 15%);
-    color: darken($blue, 15%);
+  background: transparent;
+  border-color: darken($blue, 15%);
+  color: darken($blue, 15%);
 }
 
 .button__small {
-    font-size: 14px;
-    font-weight: 500;
-    border-width:2px;
+  border-width: 2px;
+  font-size: 12px;
+  padding: 5px 10px;
 }
 
 .button__standard {
-    font-size: 16px;
-    font-weight: 700;
+  font-size: 14px;
+  padding: 6px 12px;
 }
 
 .button__huge {
-    font-size: 24px;
-    font-weight: 700;
-    border-width:5px;
+  border-width: 3px;
+  font-size: 18px;
+  padding: 10px 16px;
 }
 
-button > .icon{
-    float: right;
-    display: block;
+button > .icon {
+  display: block;
+  float: right;
 }

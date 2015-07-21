@@ -21,7 +21,9 @@ textarea {
     outline: none;
   }
 }
-
+.submit {
+  width: 100%;
+}
 .remember,
 .forgot_password {
   margin-bottom: 10px;
@@ -30,10 +32,6 @@ textarea {
   a {
     color: $blue;
   }
-}
-
-.button__standard {
-  width: 100%;
 }
 
 .terms {
