@@ -22,10 +22,31 @@ textarea {
   }
 }
 
+.remember,
+.forgot_password {
+  margin-bottom: 10px;
+  text-align: left;
+
+  a {
+    color: $blue;
+  }
+}
+
 .button__standard {
-  margin-bottom: 20px;
-  margin-top: 10px;
   width: 100%;
+}
+
+.terms {
+  font-size: 12px;
+}
+
+.form_footer {
+  border-top: 1px solid $gray;
+  margin-top: 20px;
+  padding-top: 20px;
+  a {
+    color: $blue;
+  }
 }
 
 .idea_page {
