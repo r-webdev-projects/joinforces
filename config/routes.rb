@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   match '/signup' => 'static_pages#signup', via: 'get'
   match '/login' => 'static_pages#login', via: 'get'
 
+  match '/styles' => 'static_pages#styles', via: 'get'
+
   resources :ideas do
     get '/kickoff' => 'ideas#kickoff', as: :kickoff
   end
