@@ -1,5 +1,7 @@
 $( document ).ready(function() {
 
+  $('.error').hide();
+
   $(".signupForm").submit(function(event) {
 
   var errorMessage = "";
@@ -38,6 +40,7 @@ $( document ).ready(function() {
   if (errorMessage==="") {
     alert("Success");
   } else {
+      $('.error').show();
       $(".error").html(errorMessage);
   }
 
