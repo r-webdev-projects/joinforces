@@ -1,0 +1,19 @@
+<% content_for :head do %>
+  <%= javascript_include_tag 'static_pages/login' %>
+<% end %>
+
+<div class="row">
+  <div class="col-xs-12">
+      <form action="" class="signupForm">
+        <h1>Log In</h1>
+        <input type="email" class="email" placeholder="Email">
+        <input type="password" class="password" placeholder="Password">
+        <label><input type="checkbox" class="checkbox" value="agree"> Remember me for next time</label>
+        <section class="submit">
+          <button>Log In</button>
+        </section>
+        <label><a href="">Create an account</a></label> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+        <label><a href="">Forgot Password?</a></label>
+      </form>
+  </div>
+</div>

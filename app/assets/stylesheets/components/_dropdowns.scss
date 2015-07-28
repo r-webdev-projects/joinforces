@@ -1,0 +1,72 @@
+/* Defaults in other stylesheets not yet built */
+a {
+  text-decoration: none;
+}
+
+.dropdown {
+  width: 300px;
+}
+
+.dropdown__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: $turquoise;
+  text-align: center;
+  
+  .dropdown__label {
+    display: block;
+    color: white;
+    padding: 10px;
+    position: relative;
+    
+    &:after {
+      content: "\25BE";
+      position: absolute;
+      display: block;
+      right: 10px;
+      top: 0;
+      line-height: 38px;
+    }
+    
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  
+  .dropdown__menu-item {
+    list-style: none;
+  }
+  
+  .dropdown__menu-item-link {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    transition: background-color .3s;
+    
+    &:hover {
+      background: $turquoise;
+    }
+  }
+}
+
+.dropdown__submenu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: $green-sea;
+  .dropdown__menu-item {
+    text-align: left;
+  }
+}
+
+.dropdown__menu {
+  &> .dropdown__submenu {
+    display: none;
+  }
+  
+  &:hover > .dropdown__submenu {
+    display: block;
+  }
+}
+
