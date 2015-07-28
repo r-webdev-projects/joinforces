@@ -1,0 +1,32 @@
+.alert {
+  background: $white;
+  border: 1px solid $black;
+  border-radius: 10px;
+  color: $black;
+  margin-bottom: 10px;
+  padding: 15px;
+
+  &.success {
+    border-color: $green;
+  }
+
+  &.notice {
+    border-color: $blue;
+  }
+
+  &.warning {
+    border-color: $yellow;
+  }
+
+  &.danger {
+    border-color: $red;
+  }
+}
+
+.close {
+  color: $gray;
+  float: right;
+  font-size: 1.4em;
+  line-height: 15px;
+  text-decoration: none;
+  }
