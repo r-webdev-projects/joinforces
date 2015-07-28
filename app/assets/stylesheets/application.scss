@@ -34,11 +34,7 @@
  |   |– _bootstrap_and_overrides.scss   # Boostrap
  */
 
-// @import 'utils/functions';
 @import 'utils/colors';
-// @import 'utils/variables';
-// @import 'utils/mixins';
-// @import 'utils/helpers';
 
 @import 'base/normalize';
 @import 'base/base';
@@ -46,7 +42,6 @@
 
 @import 'layout/grid';
 @import 'layout/navigation';
-// @import 'layout/header';
 @import 'layout/footer';
 
 @import 'components/alerts';
@@ -55,7 +50,5 @@
 @import 'components/icons';
 @import 'components/inputs';
 @import 'components/dropdowns';
-// @import 'components/social';
-// @import 'components/tooltips';
 
 @import 'pages/ideas';
