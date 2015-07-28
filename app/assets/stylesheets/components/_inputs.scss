@@ -9,6 +9,7 @@ textarea {
   font-size: 1em;
   padding: 8px 10px;
   margin:0 10px;
+  outline: none;
 
   &:active, &:focus {
     border-color: $dark-gray;
