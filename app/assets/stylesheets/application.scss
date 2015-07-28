@@ -9,6 +9,7 @@
  |   |– _alerts.scss      # Alerts
  |   |– _breadcrumbs.scss # Breadcrumbs
  |   |– _buttons.scss     # Buttons
+ |   |– _icons.scss       # Icons
  |   |– _social.scss      # Share/social buttons
  |   |– _tooltips.scss    # Tooltips
  |
@@ -48,12 +49,11 @@
 // @import 'layout/header';
 @import 'layout/footer';
 
-
-@import 'components/form';
-@import 'components/inputs';
-// @import 'components/buttons';
-// @import 'components/breadcrumbs';
+@import 'components/alerts';
 @import 'components/buttons';
+@import 'components/form';
+@import 'components/icons';
+@import 'components/inputs';
 @import 'components/dropdowns';
 // @import 'components/social';
 // @import 'components/tooltips';
