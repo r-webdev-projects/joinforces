@@ -14,3 +14,4 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require components/signup
+//= require components/login

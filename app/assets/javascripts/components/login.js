@@ -2,11 +2,6 @@ $( document ).ready(function() {
 
   $('.error').hide();
 
-  function isValidFullName(fullName) {
-    var validate_name = new RegExp (/^[a-zA-Z ]+$/);
-    return validate_name.test(fullName);
-  }
-
   function isValidPassword(password) {
     var validate_password = new RegExp (/^[^\s]+$/);
     return validate_password.test(password);
@@ -19,13 +14,9 @@ $( document ).ready(function() {
     return pattern.test(emailAddress);
   }
 
-  $(".signup").submit(function(event) {
+  $(".login").submit(function(event) {
 
   var errorMessage = "";
-
-  if (!isValidFullName($(".full_name").val())) {
-    errorMessage += "*Please enter your full name<br>";
-  }
 
   if (!isValidEmailAddress($(".email").val())) {
    errorMessage += "*Please enter a valid email address<br>";
