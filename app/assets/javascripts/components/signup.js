@@ -31,8 +31,8 @@ $( document ).ready(function() {
    errorMessage += "*Please enter a valid email address<br>";
   }
 
-  if ($(".password").val().length < 6 || !isValidPassword($(".password").val())) {
-    errorMessage += "*Password must be at least 6 characters long and have no spaces<br>";
+  if ($(".password").val().length < 8 || !isValidPassword($(".password").val())) {
+    errorMessage += "*Password must be at least 8 characters long and have no spaces<br>";
   }
 
   if (errorMessage==="") {
