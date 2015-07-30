@@ -1,27 +1,35 @@
-input[type=text] {
-    width: 300px;
-    padding: 8px 10px;
-    border: 2px solid $gray;
-    border-radius: 5px;
-    font-size: 16px;
-    color: $dark-gray;
-    display:inline;
-    margin:10px;
-    &:active, &:focus {
-        border: 2px solid $dark-gray;
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea {
+  border: 2px solid $gray;
+  border-radius: 5px;
+  color: $dark-gray;
+  display:inline;
+  font-size: 1em;
+  padding: 8px 10px;
+  margin:0 10px;
+  outline: none;
+
+  &:active, &:focus {
+    border-color: $dark-gray;
+  }
+
+  &:disabled {
+    background: lighten($gray, 20%);
+
+    &:active {
+        border-color: $gray;
     }
-    &:disabled {
-        background: lighten($gray, 20%);
-        &:active {
-            border-color: $gray;
-        }
-    }
-    &.success {
-        border: 2px solid $green;
-        color:$green;
-    }
-    &.error {
-        border: 2px solid $red;
-        color:$red;
-    }
+  }
+
+  &.success {
+    border-color: $green;
+    color:$green;
+  }
+
+  &.error {
+    border-color: $red;
+    color:$red;
+  }
 }

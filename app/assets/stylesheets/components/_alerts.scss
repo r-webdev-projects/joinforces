@@ -1,34 +1,32 @@
 .alert {
-  border-radius: 10px;
+  background: $white;
+  border: 2px solid $black;
+  border-radius: 5px;
   color: $black;
   margin-bottom: 10px;
   padding: 15px;
+
+  &.success {
+    border-color: $green;
+  }
+
+  &.notice {
+    border-color: $blue;
+  }
+
+  &.warning {
+    border-color: $yellow;
+  }
+
+  &.danger {
+    border-color: $red;
+  }
 }
 
-.alert-success {
-  background: $white;
-  border: 1px solid $green;
-}
-
-.alert-notice {
-  background: $white;
-  border: 1px solid $blue;
-}
-
-.alert-warning {
-  background: $white;
-  border: 1px solid $yellow;
-}
-
-.alert-danger {
-  background: $white;
-  border: 1px solid $red;
-}
-
-.close-alert {
+.close {
   color: $gray;
   float: right;
   font-size: 1.4em;
   line-height: 15px;
   text-decoration: none;
-}
+  }
