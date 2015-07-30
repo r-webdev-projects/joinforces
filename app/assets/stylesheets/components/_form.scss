@@ -1,39 +1,41 @@
-
 .form {
   border: 2px solid $black;
   border-radius: 5px;
   padding: 30px;
 }
 
-input[type="text"],
-input[type="password"],
-input[type="email"],
-textarea {
-  background: transparent;
-  border: 1px solid $black;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  padding: 5px;
-  width: 100%;
-
-  &:focus {
-    border: 1px solid $dark-blue;
-    outline: none;
-  }
-}
-
-.submit {
-  width: 100%;
-}
-
-.remember,
 .forgot_password {
   margin-bottom: 10px;
-  text-align: left;
+  position: relative;
 
   a {
+    bottom: 30px;
     color: $blue;
+    position: absolute;
+    right: 10px;
+
+    &:hover {
+      background: transparent;
+      color: $purple;
+    }
   }
+}
+
+label {
+  float: left;
+}
+
+.submit,
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.alert {
+  width: 100%;
+  text-align: left;
 }
 
 .terms {
@@ -44,14 +46,15 @@ textarea {
   border-top: 1px solid $gray;
   margin-top: 20px;
   padding-top: 20px;
+
   a {
     color: $blue;
-  }
-}
 
-.alert {
-  width:100%;
-  text-align: left;
+    &:hover {
+      background: transparent;
+      color: $purple;
+    }
+  }
 }
 
 .idea_page {

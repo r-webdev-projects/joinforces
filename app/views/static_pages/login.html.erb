@@ -3,15 +3,17 @@
 <% end %>
 <!--To-do: Add appropriate links -->
 <div class="row center-xs">
-  <div class="col-xs-3">
+  <div class="col-xs-11 col-md-5">
       <form action="" class="form login" novalidate>
         <h1>Log In</h1>
-        <div class="alert alert-danger error"></div>
-        <input type="email" class="email" placeholder="Email">
-        <div class="remember"><input type="checkbox" class="checkbox" value="remember" checked> Remember me</div>
-        <input type="password" class="password" placeholder="Password">
-        <div class="forgot_password"><a href="">Forgot Password?</a></div>
+        <div class="alert danger error"></div>
+        <label>Email</label>
+        <input type="email" class="email" placeholder="youremail@example.com">
+        <label>Password</label>
+        <div class="forgot_password">
+        <input type="password" class="password" placeholder="min. 6 characters"><a href="">Forgot?</a></div>
         <button class="button__huge submit">Log In</button>
+        <div class="remember"><input type="checkbox" class="checkbox" value="remember" checked> Remember me </div>
         <div class="form__footer">New to JoinForces?<a href="/signup"> Create an account!</a></div>
       </form>
   </div>
