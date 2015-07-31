@@ -1,0 +1,41 @@
+a {
+  text-align: center;
+  color: $black;
+}
+
+.wrapper {
+  border: 1px solid $black;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+li > div {
+  padding: 0;
+}
+
+section {
+  background: rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.project {
+}
+
+.project__item {
+}
+
+.project__likes {
+}
+
+.project__image {
+}
+
+.project__description {
+}
+
+.project__comments {
+}
