@@ -1,41 +1,57 @@
-a {
+.header {
   text-align: center;
+
+  a {
+    color: $blue;
+  }
+}
+
+.project-wrapper {
+  text-align: center;
+
+  a {
+    color: $blue;
+  }
+
+  ul {
+    padding: 0;
+  }
+
+  li {
+    border: 1px solid $gray;
+    margin: 0;
+  }
+
+  img {
+    padding-top: 3px;
+  }
+}
+
+.project__vote {
+  padding: 0;
+}
+
+.project__info {
+  text-align: left;
+
+  h4 {
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.project__summary {
   color: $black;
+  font-size: 14px;
 }
 
-.wrapper {
-  border: 1px solid $black;
-}
+.project__owner {
+  font-size: 12px;
 
-ul {
-  list-style: none;
-  padding: 0;
-  text-align: center;
-}
-
-li > div {
-  padding: 0;
-}
-
-section {
-  background: rgba(0,0,0,0.2);
-  text-align: center;
-}
-
-.project {
-}
-
-.project__item {
-}
-
-.project__likes {
-}
-
-.project__image {
-}
-
-.project__description {
-}
-
-.project__comments {
+  a {
+    color: $gray;
+  }
 }

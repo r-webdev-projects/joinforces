@@ -1,38 +1,39 @@
-<div class="wrapper container col-xs-9">
+<div class="wrapper container col-xs-12">
 
-  <section>
+  <section class="header">
     <h1><a href="#">Pick What Tickles Your Pickle</a></h1>
   </section>
 
-  <section class="project">
+  <section class="project-wrapper">
     <ul class="project__list">
 
-      <li class="row">
-          <div class="col-xs-1">871</div>
-          <div class="col-xs-1"><a href="#">Img</a></div>
-          <div class="col-xs-8"><a href="#">Project 1 description description description</a></div>
-          <div class="col-xs-2"><a href="#">4312</a></div>
-      </li>
+      <li class="project__list-item row middle-xs">
 
-      <li class="row">
-          <div class="col-xs-1">871</div>
-          <div class="col-xs-1"><a href="#">Img</a></div>
-          <div class="col-xs-8"><a href="#">Project 2 description description description</a></div>
-          <div class="col-xs-2"><a href="#">4312</a></div>
-      </li>
+        <div class="project__vote col-xs-1">
+          <div class="project__vote-up">
+            <a href=""><i class="icon-triangle-up"></i></a>
+          </div>
+          <div class="project__vote-count">871</div>
+          <div class="project__vote-down">
+            <a href=""><i class="icon-triangle-down"></i></a>
+          </div>
+        </div>
 
-      <li class="row">
-          <div class="col-xs-1">871</div>
-          <div class="col-xs-1"><a href="#">Img</a></div>
-          <div class="col-xs-8"><a href="#">Project 3 description description description</a></div>
-          <div class="col-xs-2"><a href="#">4312</a></div>
-      </li>
+        <div class="project__image col-xs-1">
+          <a href="#">
+            <img src="https://s3.amazonaws.com/fundrise-content/images/april-fools-mars-offering/property.jpg" alt="image" height="60px" width="100%">
+          </a>
+        </div>
 
-      <li class="row">
-          <div class="col-xs-1">871</div>
-          <div class="col-xs-1"><a href="#">Img</a></div>
-          <div class="col-xs-8"><a href="#">Project 4 description description description</a></div>
-          <div class="col-xs-2"><a href="#">4312</a></div>
+        <div class="col-xs-8 project__info">
+          <h4><a class="project__info__title" href="#">To colonize Mars</a></h4>
+          <p class="project__summary">President Obama has ordered a mission of epic proportions. Are you in or are you out?</p>
+          <p class="project__owner"><a href="#">Obama</a></p>
+        </div>
+
+        <div class="col-xs-2 project__extras">
+          <a href="#">4312 <i class="icon-chat"></i></a>
+        </div>
       </li>
 
     </ul>
