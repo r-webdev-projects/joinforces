@@ -3,7 +3,7 @@ $( document ).ready(function() {
   $('.error').hide();
 
   function isValidFullName(fullName) {
-    var validate_name = new RegExp (/^[a-zA-Z ]+$/);
+    var validate_name = new RegExp (/^[a-z'-A-Z ]+$/);
     return validate_name.test(fullName);
   }
 
