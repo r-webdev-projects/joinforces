@@ -17,12 +17,13 @@ $( document ).ready(function() {
   $(".login").submit(function(event) {
 
   var errorMessage = "";
+  var passValue = $(".password").val();
 
   if (!isValidEmailAddress($(".email").val())) {
    errorMessage += "*Please enter a valid email address<br>";
   }
 
-  if ($(".password").val().length < 8 || !isValidPassword($(".password").val())) {
+  if (passValue.length < 8 || !isValidPassword(passValue)) {
     errorMessage += "*Password must be at least 8 characters long and have no spaces<br>";
   }
 
