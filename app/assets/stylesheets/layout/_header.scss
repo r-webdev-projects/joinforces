@@ -1,0 +1,90 @@
+.header__global {
+  padding: 0 10px;
+  margin: 0;
+  border-bottom: 1px solid $silver;
+  background: white;
+
+  .header__logo {
+
+    a {
+      display: block;
+      //background: $alizarin;
+      margin: 10px 0;
+      color: $silver;
+      font-size: 16px;
+      border-radius: 50%;
+      height: 35px;
+      line-height: 35px;
+      background-size: cover;
+      background-position: center center;
+      font-size: 24px;
+      font-weight: 100;
+      vertical-align: middle;
+
+      svg {
+        @include vertical-center;
+        height: 70%;
+        fill: $alizarin;
+        margin-right: 5px;
+      }
+
+      &:hover {
+        color: $alizarin;
+      }
+    }
+
+  }
+
+  .header__navigation {
+    padding-left: 25px;
+
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      display: inline-block;
+      margin-right: 10px;
+
+      a {
+        font-size: 14px;
+        letter-spacing: .5px;
+        color: $asbestos;
+        position: relative;
+        padding: 14px 5px 6px 5px;
+        display: block;
+        text-transform: uppercase;
+        font-weight: 500;
+        letter-spacing: 2px;
+        line-height: 35px;
+
+        &:after {
+          content: "";
+          display: block;
+          position: absolute;
+          height: 4px;
+          width: 100%;
+          bottom: 0;
+          left: 0;
+        }
+
+        &:hover:after, &.active:after {
+          background: $silver;
+        }
+      }
+    }
+  }
+}
+
+// Needs to be moved to appropriate stylesheet once it exists
+.user__avatar {
+  a {
+    line-height: 40px;
+  }
+  img {
+    border-radius: 50%;
+    height: 40px;
+    border: 1px solid $silver;
+    margin-top:8px;
+  }
+}

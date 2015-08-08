@@ -1,15 +1,19 @@
 Rails.application.routes.draw do
 
+  get 'users/new'
+
   match '/about' => 'static_pages#about', via: 'get'
   match '/contact' => 'static_pages#contact', via: 'get'
-
   match '/styles' => 'static_pages#styles', via: 'get'
 
+  devise_for :users #, :controllers => { registrations: 'registrations' }
+
   resources :ideas do
+    resources :comments
     get '/kickoff' => 'ideas#kickoff', as: :kickoff
   end
-  root 'ideas#index'
 
+  root 'ideas#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

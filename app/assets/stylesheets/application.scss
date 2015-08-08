@@ -35,6 +35,9 @@
  */
 
 @import 'utils/colors';
+// @import 'utils/variables';
+@import 'utils/mixins';
+// @import 'utils/helpers';
 
 @import 'base/normalize';
 @import 'base/base';
@@ -42,6 +45,7 @@
 
 @import 'layout/grid';
 @import 'layout/navigation';
+@import 'layout/header';
 @import 'layout/footer';
 
 @import 'components/alerts';

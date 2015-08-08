@@ -1,0 +1,14 @@
+<%= form_for([@idea, @idea.comments.build]) do |f| %>
+	<div class='user__avatar'>
+		<%= link_to edit_user_registration_path do %>
+			<%= image_tag gravatar(current_user) %>
+		<% end %>
+  </div>
+	<p>
+		<%= f.label :body %><br>
+		<%= f.text_area :body %>
+	</p>
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>

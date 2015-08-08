@@ -1,0 +1,17 @@
+.comment-stream__comment.row
+  .comment__timeline.col-xs-10
+    .user__avatar
+      = link_to edit_user_registration_path do
+        = image_tag gravatar(comment.user)
+  .comment_content.col-xs-2
+    .comment__author
+      = comment.user.first_name
+    .comment__posted_on
+      = "#{time_ago_in_words(comment.created_at)} ago"
+    .comment__message
+      = comment.body
+    .comment__actions
+      - if comment.created_at >= 15.minutes.ago
+        = link_to 'Delete', [comment.idea, comment],
+        	method: :delete,
+        	data: { confirm: 'Are you sure?' }

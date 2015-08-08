@@ -1,19 +1,61 @@
+.page-header
+  h1.page-headline
+    .page-headline__copy Copy
 
+.ideas__listing
+  /.ideas__filter-bar
+    = link_to 'Trending', "", class: 'ideas__filter'
+    = link_to 'Live', "", class: 'ideas__filter'
+    = link_to 'New', "", class: 'ideas__filter'
+
+    ul.ideas__filter-topics
+      li = link_to 'Entertainment & Games', ""
+      li = link_to 'Mobile', ""
+      li = link_to 'Productivty & Tools', ""
+
+    .ideas__filter-search
+      input type='search'
+
+  .v2.row
+    - @ideas.each do |idea|
+      .ideas__listing-item
+        .ideas__listing-details
+          = link_to idea.title, idea_path(idea), class: 'ideas__listing-title'
+          p.ideas__listing-description = idea.description
+          .ideas__listing-like.col
+            i.icon-chevron-up
+            span 30
+        .ideas__listing-owner
+          .user__avatar
+            = link_to '' do
+              = image_tag 'https://en.gravatar.com/userimage/7875630/5f276b7cc6943ef946bf871f1bd8397b.png'
+          .ideas__listing-comments
+            = link_to '' do
+              i.icon-bubbles
+            span 30
+
+
+  - @ideas.each do |idea|
+    .ideas__listing-item.row
+      .ideas__listing-like.col
+        i.icon-chevron-up
+        span 30
+      .ideas__listing-image.col
+        = image_tag "http://www.lorempixum.com/400/100/technology?random=#{rand(1..10)}"
+      .ideas__listing-details
+        = link_to idea.title, idea_path(idea), class: 'ideas__listing-title'
+        p.ideas__listing-description = idea.description
+      .ideas__listing-owner
+        .user__avatar
+          = link_to '' do
+            = image_tag 'https://en.gravatar.com/userimage/7875630/5f276b7cc6943ef946bf871f1bd8397b.png'
+        .ideas__listing-comments
+          = link_to '' do
+            i.icon-bubbles
+          span 30
 
 ._page-header.container-fluid
-    .headline.col-xs-12.col-sm-9
-      h1 Great minds discuss ideas. Average minds discuss events. Small minds discuss people.
+    
     .call-to-action.col-xs-12.col-sm-3.text-center
       button.btn.btn-default.btn-lg type="button"
         = link_to 'Post an idea', new_idea_path
-
-.listing.ideas.container
-  - @ideas.each do |idea|
-    .panel.panel-default
-      .panel-body
-        .row
-          .col-xs-1
-            = inline_svg 'shared/star.svg', class: 'favorite-icon'
-          .col-xs-11
-            a.title = link_to idea.title, idea_path(idea)
-            p.description = idea.description
