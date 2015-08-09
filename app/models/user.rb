@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 
   has_many :ideas
-  has_many :comments, foreign_key: :author_id
+  acts_as_commontator
 
   validates :first_name, presence: true
 

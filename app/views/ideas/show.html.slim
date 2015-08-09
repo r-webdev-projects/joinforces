@@ -2,6 +2,8 @@
   .comment-stream.col-xs-8
     .comment-stream__title = @idea.title
     .comment-stream__description = @idea.description
+    = commontator_thread(@idea)
+
     .comment-stream__comment.row
       .comment__timeline.col-xs-10
       .comment_content.col-xs-2
