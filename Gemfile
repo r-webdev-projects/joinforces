@@ -19,8 +19,11 @@ gem 'friendly_id'
 # For user authentication
 gem 'devise'
 
-group :development, :test do
+# For commenting
+gem 'commontator'
+gem 'acts_as_votable'
 
+group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 
