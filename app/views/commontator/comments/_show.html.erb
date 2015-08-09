@@ -13,6 +13,7 @@
   <div id="comment_<%= comment.id.to_s %>_top_div" class="comment_div">
     <span id="comment_<%= comment.id.to_s %>_commontator_span" class="comment_commontator">
       <%= link.blank? ? name : link_to(name, link) %>
+      <%= debug(comment) %>
     </span>
     <span id="comment_<%= comment.id.to_s %>_actions_span" class="comment_actions">
       <%= render :partial => 'commontator/comments/actions',

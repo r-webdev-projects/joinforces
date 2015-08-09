@@ -5,6 +5,7 @@
    per_page ||= nil
    thread ||= nil
    no_remote ||= false
+   parent_id ||= nil
 %>
 
 <% config = comment.thread.config %>
@@ -25,14 +26,15 @@
              :remote => !no_remote) do |f| %>
 
   <%= hidden_field_tag :per_page, per_page %>
-  
+  <%= hidden_field_tag 'comment[parent_id]', 7 %>
+
   <div class="comment_form_field">
     <%= f.text_area :body, :rows => '7' %>
   </div>
-  
+
   <div class="comment_form_actions">
     <%= f.submit t("commontator.comment.actions.#{comment.id.blank? ? 'create' : 'update'}") %>
     <%= f.submit t('commontator.comment.actions.cancel'), :name => 'cancel' %>
   </div>
-  
+
 <% end %>
