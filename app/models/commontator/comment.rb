@@ -1,5 +1,7 @@
 module Commontator
   class Comment < ActiveRecord::Base
+    acts_as_nested_set
+
     belongs_to :creator, :polymorphic => true
     belongs_to :editor, :polymorphic => true
     belongs_to :thread
@@ -66,7 +68,7 @@ module Commontator
       I18n.t 'commontator.comment.status.created_at',
              :created_at => I18n.l(created_at, :format => :commontator)
     end
-    
+
     def updated_timestamp
       I18n.t 'commontator.comment.status.updated_at',
              :editor_name => Commontator.commontator_name(editor || creator),
