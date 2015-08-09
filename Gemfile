@@ -22,6 +22,7 @@ gem 'devise'
 # For commenting
 gem 'commontator'
 gem 'acts_as_votable'
+gem 'awesome_nested_set'
 
 group :development, :test do
   gem 'web-console', '~> 2.0'
