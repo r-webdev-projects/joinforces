@@ -1,9 +1,5 @@
-/ .page-header
-/   h1.page-headline
-/     .page-headline__copy Copy
-
 .ideas__listing
-  /.ideas__filter-bar
+  .ideas__filter-bar
     = link_to 'Trending', "", class: 'ideas__filter'
     = link_to 'Live', "", class: 'ideas__filter'
     = link_to 'New', "", class: 'ideas__filter'
@@ -15,25 +11,6 @@
 
     .ideas__filter-search
       input type='search'
-
-  .v2.row
-    - @ideas.each do |idea|
-      .ideas__listing-item
-        .ideas__listing-details
-          = link_to idea.title, idea_path(idea), class: 'ideas__listing-title'
-          p.ideas__listing-description = idea.description
-          .ideas__listing-like.col
-            i.icon-chevron-up
-            span 30
-        .ideas__listing-owner
-          .user__avatar
-            = link_to '' do
-              = image_tag 'https://en.gravatar.com/userimage/7875630/5f276b7cc6943ef946bf871f1bd8397b.png'
-          .ideas__listing-comments
-            = link_to '' do
-              i.icon-bubbles
-            span 30
-
 
   - @ideas.each do |idea|
     .ideas__listing-item.row
