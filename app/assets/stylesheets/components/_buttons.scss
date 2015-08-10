@@ -1,45 +1,15 @@
-button {
-    border: 3px solid $blue;
-    border-radius: 8px;
-    background: $blue;
-    padding: 10px 20px;
-    margin: 5px;
-    color: white;
-    transition: all .2s linear;
-    position: relative;
+button, a.button {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 11px;
+    vertical-align: middle;
+    font-weight: 600;
+    padding: 0px 25px;
+    // border: 1px solid #838d90;
+    letter-spacing: 2px;
+    line-height: 3em;
+    border-radius: 10em;
+    color: #3c3d41;
+    text-align: center;
 }
 
-button:hover,
-button.hover {
-    background: transparent;
-    color: $blue;
-}
-
-button:active,
-button.active {
-    background: transparent;
-    border-color: darken($blue, 15%);
-    color: darken($blue, 15%);
-}
-
-.button__small {
-    font-size: 14px;
-    font-weight: 500;
-    border-width:2px;
-}
-
-.button__standard {
-    font-size: 16px;
-    font-weight: 700;
-}
-
-.button__huge {
-    font-size: 24px;
-    font-weight: 700;
-    border-width:5px;
-}
-
-button > .icon{
-    float: right;
-    display: block;
-}

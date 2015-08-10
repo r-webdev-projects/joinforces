@@ -1,96 +1,3 @@
-
-/**********************\
- *      Variables     *
-\**********************/
-
-$white:       darken(white, 2%);
-$black:       lighten(black, 27%);
-
-$header-height: 65px;
-$header-max-width: 1200px;
-$header-nav-link-padding: 0 24px;
-$header-background: $blue;
-
-/**********************\
- *       Styles       *
-\**********************/
-
-*,
-*:before,
-*:after {
-
-  box-sizing: border-box;
-
-}
-
-/**********************\
- *       Header       *
-\**********************/
-
-.site--header {
-  background: $blue;
-  height: $header-height;
-
-  .header--content {
-
-    display: table;
-
-    height: 100%;
-
-    margin: 0 auto;
-    max-width: $header-max-width;
-    width: 100%;
-
-    .header--left,
-    .header--right {
-
-      display: table-cell;
-
-      vertical-align: middle;
-
-      }
-
-    .header--left {
-
-      padding: 2px;
-
-    }
-
-    .branding{
-      margin-left: 5px;
-    }
-
-    .header--right {
-
-      text-align: right;
-
-      .site-nav {
-
-        a {
-
-          color: $black;
-          display: inline-block;
-
-          font-weight: 700;
-          line-height: $header-height;
-          margin-right: 7px;
-          font-size: 1.5em;
-          padding: $header-nav-link-padding;
-          text-decoration: none;
-
-
-          &:hover {
-
-              background: darken($header-background, 10%);
-
-          }
-        }
-      }
-    }
-  }
-}
-
-
 // Normalize unordered lists used within navigation
 nav > ul, ul[role='navigation'] {
   margin: 0;
@@ -98,5 +5,24 @@ nav > ul, ul[role='navigation'] {
 
   li {
     list-style: none;
+
+  }
+}
+
+
+ul.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  &.horizontal {
+    li {
+      display: inline-block;
+    }
+  }
+  &.right {
+    li {
+      margin-left: 15px;
+    }
   }
 }
