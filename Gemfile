@@ -20,9 +20,8 @@ gem 'friendly_id'
 gem 'devise'
 
 # For commenting
-gem 'commontator'
-gem 'acts_as_votable'
-gem 'awesome_nested_set'
+# gem 'acts_as_votable'
+
 
 group :development, :test do
   gem 'web-console', '~> 2.0'

@@ -36,13 +36,10 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    acts_as_votable (0.10.0)
     arel (6.0.0)
     autoprefixer-rails (5.2.0.1)
       execjs
       json
-    awesome_nested_set (3.0.2)
-      activerecord (>= 4.0.0, < 5)
     bcrypt (3.1.10)
     bcrypt (3.1.10-x86-mingw32)
     binding_of_caller (0.7.2)
@@ -61,9 +58,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.1.1)
-    commontator (4.10.5)
-      jquery-rails
-      rails (>= 3.1)
     debug_inspector (0.0.2)
     devise (3.5.1)
       bcrypt (~> 3.0)
@@ -198,12 +192,9 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-  acts_as_votable
   autoprefixer-rails
-  awesome_nested_set
   capybara
   coffee-rails (~> 4.1.0)
-  commontator
   devise
   friendly_id
   inline_svg
