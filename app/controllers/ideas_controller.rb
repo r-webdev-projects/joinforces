@@ -8,7 +8,7 @@ class IdeasController < ApplicationController
 
   # GET /ideas/1
   def show
-    commontator_thread_show(@idea)
+
   end
 
   # GET /ideas/new
