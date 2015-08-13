@@ -3,7 +3,7 @@ class IdeasController < ApplicationController
 
   # GET /ideas
   def index
-    @ideas = Idea.all
+    @ideas = Idea.all.order('created_at DESC')
   end
 
   # GET /ideas/1

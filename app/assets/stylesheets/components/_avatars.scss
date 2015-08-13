@@ -1,7 +1,16 @@
 .avatar {
   @include column(4/10);
   img {
-    border-radius: 50%;
     height: 40px;
+  }
+
+  &:not(.square) {
+    img {
+      border-radius: 50%;
+    }
+  }
+
+  &.square img {
+    border-radius: 50%;
   }
 }

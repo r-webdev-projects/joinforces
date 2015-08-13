@@ -1,5 +1,5 @@
 .ideas__listing
-  .ideas__filter-bar
+  /.ideas__filter-bar
     = link_to 'Trending', "", class: 'ideas__filter'
     = link_to 'Live', "", class: 'ideas__filter'
     = link_to 'New', "", class: 'ideas__filter'
@@ -13,26 +13,48 @@
       input type='search'
 
   - @ideas.each do |idea|
-    .ideas__listing-item.row
-      .ideas__listing-like.col
-        i.icon-chevron-up
-        span 30
-      .ideas__listing-image.col
-        = image_tag "http://www.lorempixum.com/400/100/technology?random=#{rand(1..10)}"
+    .ideas__listing-item
+      .ideas__listing-image
+        = image_tag "https://unsplash.it/400/?random"
       .ideas__listing-details
-        = link_to idea.title, idea_path(idea), class: 'ideas__listing-title'
-        p.ideas__listing-description = idea.description
-      .ideas__listing-owner
-        .user__avatar
+        /.ideas__listing-like
+          / i.icon-chevron-up
+          / span 30
+          .icon
+            = inline_svg 'bulb.svg'
+          span Idea submitted by Jackson Pollock
+        .avatar.square
           = link_to '' do
             = image_tag 'https://en.gravatar.com/userimage/7875630/5f276b7cc6943ef946bf871f1bd8397b.png'
-        .ideas__listing-comments
-          = link_to '' do
-            i.icon-bubbles
-          span 30
+        = link_to idea.title, idea_path(idea), class: 'ideas__listing-title'
+        p.ideas__listing-description = idea.description
+      .ideas__status
+        .stat
+          .icon
+            = inline_svg 'talk.svg'
+          .value
+            | 30
+          .label
+            | comments
 
-._page-header.container-fluid
+        .stat
+          .icon
+            = inline_svg 'user.svg'
+          .value
+            | 30
+          .label
+            | Supporters
+
+        .stat
+          .icon
+            = inline_svg 'pen.svg'
+          .value
+            | 30
+          .label
+            | pens
+
+._page-header
     
-    .call-to-action.col-xs-12.col-sm-3.text-center
+    .call-to-action
       button.btn.btn-default.btn-lg type="button"
         = link_to 'Post an idea', new_idea_path

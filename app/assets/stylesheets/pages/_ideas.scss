@@ -1,67 +1,133 @@
 .ideas__listing {
+  @include cf();
   width: 1200px;
   margin: 30px auto;
 }
+// @include edit();
 
 .ideas__listing-item {
-  border: 1px solid $silver;
-  margin: 0 auto 10px auto;
-  border-radius: 2px;
-  padding: 15px 0;
-  flex-wrap: nowrap;
+  @include column(1/3, 0, 3);
   background: white;
-
-  &:hover {
-    cursor: pointer;
-    background: lighten($clouds, 4.5%);
-  }
+  border: 1px solid $clouds;
+  margin-bottom: 30px;
+  overflow: hidden;
 }
 .ideas__listing-like {
-  padding: 20px 0 0 0;
-  text-align: center;
-  flex-basis: 50px;
-  flex-shrink: 0;
-  transition: all .25s ease;
-  position: relative;
+
+  .icon {
+    text-align: center;
+    transition: all .25s ease;
+    position: relative;
+    background: $clouds;
+    border-radius: 50%;
+    position: absolute;
+    height: 45px;
+    width: 45px;
+    top: -30px;
+    // left: calc(50% - 25px);
+    left: 15px;
+
+    svg {
+      width: 30px;
+      height: auto;
+      margin: 7px 0;
+    }
+
+    &:hover {
+      transform: scale(1.2);
+      cursor: pointer;
+    }
+  }
 
   span {
     display: block;
-    font-weight: 600;
-    font-size: 14px;
+    font-weight: 400;
+    font-size: 12px;
     margin-top: -5px;
+    position: relative;
+    top: -1.5em;
+    left: 55px;
+    letter-spacing: .3px;
   }
 
-  &:hover {
-    transform: scale(1.2);
-    cursor: pointer;
-  }
 }
+
 .ideas__listing-image {
-  border-radius: 4px;
-  flex-basis: 150px;
-  flex-shrink: 0;
-  height: 100px;
+  border-radius: 2px 2px 0 0;
+  width: 100%;
+  padding-bottom: 75%;
   overflow: hidden;
+  position: relative;
+
+
+  img {
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }
 .ideas__listing-details {
   padding: 15px;
-  flex-grow: 2;
+  background: #FFF;
+  z-index: 10;
+  position: relative;
+
+  .avatar {
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: calc(100% + 13px);
+    font-size: 0;
+
+    & > * {
+      display: inline-block;
+    }
+
+    img {
+      border-radius: 2px;
+      display: block;
+      opacity: .9;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+  }
 
   .ideas__listing-title {
-    font-size: 20px;
+    font-size: 16px;
+    letter-spacing: .5px;
     font-weight: 500;
     color: $black;
-    line-height: 1.5em;
+    display: inline-block;
+    margin-bottom: 5px;
   }
   .ideas__listing-description {
     margin: 0;
-    line-height: 1.3em;
-    font-size: 16px;
-    color: $asbestos;
+    line-height: 1.4em;
+    font-size: 13px;
+    letter-spacing: .3px;
+    color: lighten($asbestos, 10%);
+    height: 5em;
+    margin-bottom: 5px;
+    position: relative;
+    overflow: hidden;
+
+    &:after {
+      content: "";
+      display: block;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      height: 20px;
+      background: linear-gradient(to top, transparentize(#FFF, .1), transparent)
+    }
   }
 }
 .ideas__listing-owner {
-  padding: 0 30px;
+  padding: 10px 15px;
   align-self: center;
   flex-basis: 160px;
   flex-shrink: 0;
@@ -80,114 +146,54 @@
   }
 }
 
-
-.v2 {
-  .ideas__listing-item {
-    flex-basis: calc((100% - 80px) / 3);
-    padding: 0;
-    flex-direction: column;
-    display: flex;
-  }
-  .ideas__listing-details {
-    padding: 30px 20px;
-    letter-spacing: .5px;
+.ideas__status {
+  .stat {
+    @include span(1/3);
+    text-align: left;
     position: relative;
+    padding: 10px;
+    overflow: hidden;
+    border-top: 1px solid transparentize($asbestos, .9);
 
-
-    .ideas__listing-title {
-      line-height: 1em;
-      margin-bottom: 10px;
-      display: inline-block;
-    }
-    .ideas__listing-description {
-      line-height: 1.4em;
-      font-size: 15px;
-    }
-  }
-  .ideas__listing-like {
-    background: $asbestos;
-    border-radius: 50%;
-    height: 50px;
-    width: 50px;
-    padding: 0;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: absolute;
-    right: 15px;
-    bottom: -25px;
-    color: white;
-
-    i {
-      display: block;
-      margin: 0 auto 3px auto;
-      padding: 0;
-    }
-
-    &:hover {
-      background: $alizarin;
-    }
-  }
-  .ideas__listing-owner {
-    border-top: 1px solid $clouds;
-    padding: 40px 10px 10px 20px;
-    align-self: flex-end;
-    flex-basis: auto;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-
-
-    .user__avatar {
-      a {
-        line-height: 30px;
-        height: 30px;
+    &:not(:last-child) {
+      &:after {
+        content: "";
+        position: absolute;
         display: block;
-      }
-      img {
-        height: 30px;
-        margin: 0;
+        width: 1px;
+        height: calc(100%);
+        background: transparentize($asbestos, .7);
+        top: 0px;
+        left: calc(100% - 1px);
       }
     }
-    .ideas__listing-comments {
-      align-self: center;
-    }
-  }
-}
 
-.idea__detail {
-  width: 1024px;
-  margin: 30px auto;
-
-  .comment-stream {
-    background: #fefefe;
-    padding: 30px;
-    border: 1px solid darken($clouds, 10%);
-    border-radius: 3px;
-    max-width: 63.666667%;
-    margin-right: 3%;
-    flex-basis: 63.666667%;
-
-    .comment-stream__title {
+    .icon {
       font-size: 24px;
-      font-weight: 400;
-      letter-spacing: .75px;
-      margin-bottom: 10px;
-      color: #444;
-    }
+      color: transparentize($asbestos, .5);
+      position: relative;
+      display: inline-block;
+      position: absolute;
+      left: calc(100% - 30px);
 
-    .comment-stream__description {
+      svg {
+        width: 45px;
+        height: auto;
+        opacity: .8;
+      }
+    }
+    .label {
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 1px;
+      opacity: .5;
+    }
+    .value {
       font-size: 16px;
-      color: $asbestos;
+      color: black;
+      text-align: left;
     }
-  }
-
-  .idea__detail-sidebar {
-    background: #fefefe;
-    padding: 30px;
-    border: 1px solid darken($clouds, 10%);
-    border-radius: 3px;
   }
 }
 
