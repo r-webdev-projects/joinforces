@@ -20,6 +20,7 @@ gem 'friendly_id'
 gem 'devise'
 
 # For commenting
+gem 'closure_tree'
 # gem 'acts_as_votable'
 
 
