@@ -20,16 +20,20 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @idea = Idea.find(params[:idea_id])
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+
+    redirect_to idea_path(@idea), notice: 'Idea was successfully destroyed.'
+  end
+
 private
 
   def load_commentable
     resource, id = request.path.split('/')[1, 2]
     @commentable = resource.singularize.classify.constantize.find(id)
   end
-
-  # def comment_params
-  #   params.require(:comment).permit(:body, :idea_id)
-  # end
 
   def comment_params
     params.require(:comment).permit(:body, :idea_id, :commentable_id)

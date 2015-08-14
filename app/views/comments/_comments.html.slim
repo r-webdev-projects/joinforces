@@ -9,3 +9,6 @@
         = time_ago_in_words(comment.created_at)
         |  ago
       .comment__message = comment.body
+      .comment__actions
+        - if comment_by_current_user?(comment)
+          = link_to 'Delete Comment', idea_comment_path(@idea, comment), :method => :delete
