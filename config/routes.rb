@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   # Ideas
   resources :ideas do
     resources :comments
+    resources :support
     get '/kickoff' => 'ideas#kickoff', as: :kickoff
   end
 

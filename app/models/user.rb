@@ -15,6 +15,8 @@ class User < ActiveRecord::Base
   # This is in addition to a real persisted field like 'username'
   attr_accessor :login
 
+  acts_as_voter
+
   def full_name
     name = ""
     if self.first_name.present?
