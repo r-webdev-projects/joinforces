@@ -8,7 +8,9 @@ class IdeasController < ApplicationController
 
   # GET /ideas/1
   def show
-
+    @commentable = @idea
+    @comments = @commentable.comments
+    @comment = Comment.new
   end
 
   # GET /ideas/new
