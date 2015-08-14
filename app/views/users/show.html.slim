@@ -1,5 +1,16 @@
 main.users
   
-  section.profile
-    = image_tag @user.gravatar_url
+  aside
+    section.profile
+      section.avatar.large
+        = image_tag @user.gravatar_url('200')
+        span.username = @user.username
+        span.location = @user.location.present? ? @user.location : "Add Location"
+
+    - if @user.ideas.any?
+      section.ideas
+        h3 PROPOSED PROJECTS
+        - for idea in @user.ideas
+          = link_to idea.title, idea_path(idea)
+  
   section.activity-stream
