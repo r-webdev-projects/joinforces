@@ -13,8 +13,8 @@ main.idea
           |  or 
           = link_to "Register", new_user_registration_path
           |  to comment
-        
+
     
   aside.idea__detail-sidebar
-    .hello
-      | HI HIHIHIH
+    - if @idea.user == current_user
+      = link_to "Delete idea", idea_path(@idea), method: 'delete'
