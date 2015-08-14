@@ -24,6 +24,7 @@
         p.ideas__listing-description = idea.description
       .ideas__status
         .stat
+          = link_to "", idea_path(idea, anchor: 'comments'), class: 'link'
           .icon = inline_svg 'talk.svg'
           .value = idea.comments.count
           .label = "comment".pluralize(idea.comments.count)
