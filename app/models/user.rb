@@ -1,13 +1,19 @@
 class User < ActiveRecord::Base
   has_many :ideas
+  has_many :comments, dependent: :destroy
 
-  validates :username, presence: true
+  validates :username, :presence => true,
+                       :uniqueness => { :case_sensitive => false }
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
          # :confirmable, :lockable, :timeoutable and :omniauthable
 
   cattr_accessor :current_user
+
+  # Virtual attribute for authenticating by either username or email
+  # This is in addition to a real persisted field like 'username'
+  attr_accessor :login
 
   def full_name
     name = ""
@@ -23,5 +29,14 @@ class User < ActiveRecord::Base
   def gravatar_url
     gravatar_id = Digest::MD5::hexdigest(self.email).downcase
     "http://gravatar.com/avatar/#{gravatar_id}.png"
+  end
+
+  def self.find_for_database_authentication(warden_conditions)
+    conditions = warden_conditions.dup
+    if login = conditions.delete(:login)
+      where(conditions.to_hash).where(["lower(username) = :value OR lower(email) = :value", { :value => login.downcase }]).first
+    else
+      where(conditions.to_hash).first
+    end
   end
 end
