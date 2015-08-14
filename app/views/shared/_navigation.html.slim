@@ -11,14 +11,14 @@ header.global
     ul.navigation.horizontal
       li.navigation-item = link_to "Ideas", ideas_path, class: 'active button'
       li.navigation-item = link_to "Products", "#", class: 'button'
-      li.navigation-item = link_to "Sign in", "#", class: 'button '
+      - if user_signed_in?
+        li.navigation-item = link_to "Logout", destroy_user_session_path, method: :delete, class: 'button'
+      - else
+        li.navigation-item = link_to "Register", new_user_registration_path, class: 'button'
+        li.navigation-item = link_to "Sign in", new_user_session_path, class: 'button'
 
-/ header.header__global
-/   .global-container.row
-/     .header__logo.col
-/       = link_to "/" do
-/         = inline_svg "logo.svg"
-/         | Joinforc.es
+
+
 
 /     .header__navigation.col-xs-9
 /       ul role='navigation'
