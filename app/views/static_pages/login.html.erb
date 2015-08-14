@@ -1,0 +1,20 @@
+<% content_for :head do %>
+  <%= javascript_include_tag 'static_pages/login' %>
+<% end %>
+<!--To-do: Add appropriate links -->
+<div class="row center-xs">
+  <div class="col-xs-11 col-md-5">
+      <form action="" class="form login" novalidate>
+        <h1>Log In</h1>
+        <div class="alert danger error"></div>
+        <label>Email</label>
+        <input type="email" class="email" placeholder="youremail@example.com">
+        <label>Password</label>
+        <div class="forgot_password">
+        <input type="password" class="password" placeholder="min. 8 characters"><a href="">Forgot?</a></div>
+        <div class="remember"><input type="checkbox" class="checkbox" value="remember" checked> Remember me </div>
+        <button class="button__huge submit">Log In</button>
+        <div class="form__footer">New to JoinForces?<a href="/signup"> Create an account!</a></div>
+      </form>
+  </div>
+</div>

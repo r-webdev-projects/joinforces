@@ -1,0 +1,21 @@
+<% content_for :head do %>
+  <%= javascript_include_tag 'static_pages/signup' %>
+<% end %>
+
+<div class="row center-xs">
+  <div class="col-xs-11 col-md-5">
+      <form action="" class="form signup" novalidate>
+        <h1>Sign up</h1>
+        <div class="alert danger error"></div>
+        <label for="full-name">Full name</label>
+        <input type="text" class="full-name" placeholder="Toan Tran">
+        <label>Email</label>
+        <input type="email" class="email" placeholder="kingofwontons@joinforces.com">
+        <label>Password</label>
+        <input type="password" class="password" placeholder="min. 8 characters">
+        <button class="button__huge submit">Create my account</button>
+        <p class="terms">By signing up you agree to the terms of service and privacy policy.</p>
+        <div class="form__footer">Have an account? <a href="/login">Log in</a></div>
+      </form>
+  </div>
+</div>

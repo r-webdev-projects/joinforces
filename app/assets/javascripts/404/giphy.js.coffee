@@ -36,12 +36,12 @@ jQuery ->
   $('.sign h1').html(keyword)
   $('.sign h2').html(message)
 
-  jsonURL = "http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=" + encodeURIComponent(keyword)
+  jsonURL = "//api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=" + encodeURIComponent(keyword)
 
   $.getJSON jsonURL, (data) ->
     url = data.data.image_url
     img = document.createElement("img");
-    img.src = url
+    img.src = url.replace("http:", "");
     img.height = gif_height;
 
     $(img).appendTo('.display')

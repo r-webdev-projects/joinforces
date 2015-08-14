@@ -1,16 +1,40 @@
-header
-  nav.navbar.navbar-default
-    .container
-      .navbar-header
-        button.navbar-toggle.collapsed type="button" data-toggle="collapse" data-target="#navgation" aria-expanded="false"
-          span.sr-only
-              | Toggle navigation
-          span.icon-bar
-          span.icon-bar
-          span.icon-bar
-        a.navbar-brand href="/"
-          = inline_svg 'shared/code.svg'
+header.global
+  nav role='navigation'
+    .ideabot
+      = link_to "/" do
+        = inline_svg "robot.svg", class: 'robot'
+      blockquote
+        | Let's 
+        strong joinforc.es
+        |  to take over the world
+    
+    ul.navigation.horizontal
+      li.navigation-item = link_to "Ideas", ideas_path, class: 'active button'
+      li.navigation-item = link_to "Products", "#", class: 'button'
+      li.navigation-item = link_to "Sign in", "#", class: 'button '
 
-      #navigation.collapse.navbar-collapse
-        ul.nav.navbar-nav
-          li = link_to 'Ideas', ideas_path
+/ header.header__global
+/   .global-container.row
+/     .header__logo.col
+/       = link_to "/" do
+/         = inline_svg "logo.svg"
+/         | Joinforc.es
+
+/     .header__navigation.col-xs-9
+/       ul role='navigation'
+/         li = link_to "Products", "#"
+/         li = link_to "Ideas", ideas_path, class: 'active'
+/     .header__acount-navigation.col-xs-1.end-xs
+/       - if user_signed_in?
+/         .likes
+/         .alerts
+/         .user__avatar
+/           = link_to edit_user_registration_path do
+/             = image_tag gravatar(current_user)
+
+/           / TODO: Add drop-down with account pages
+/           / = link_to "Logout", destroy_user_session_path, method: :delete
+/       - else
+/         = link_to "Sign up", new_user_registration_path
+/         = link_to "Login", new_user_session_path
+

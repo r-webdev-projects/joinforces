@@ -1,0 +1,28 @@
+// Normalize unordered lists used within navigation
+nav > ul, ul[role='navigation'] {
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style: none;
+
+  }
+}
+
+
+ul.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  &.horizontal {
+    li {
+      display: inline-block;
+    }
+  }
+  &.right {
+    li {
+      margin-left: 15px;
+    }
+  }
+}

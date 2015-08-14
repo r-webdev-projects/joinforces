@@ -1,0 +1,85 @@
+/**********************\
+ *      Variables     *
+\**********************/
+
+$white:       darken(white, 2%);
+$black:       lighten(black, 27%);
+
+$font: Roboto, Arial, sans-serif;
+$alt-font: Montserrat, Arial, sans-serif;
+
+$footer-max-width: 1200px;
+$footer-nav-link-padding: 0 24px;
+$footer-background: $blue;
+
+/**********************\
+ *       Styles       *
+\**********************/
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+/**********************\
+ *       footer       *
+\**********************/
+
+.site--footer {
+  background: $footer-background;
+
+
+  .footer--content {
+    display: table;
+
+    height: 100%;
+    margin: 0 auto;
+    max-width: $footer-max-width;
+    width: 100%;
+
+    .footer--left,
+    .footer--right {
+
+      display: table-cell;
+      vertical-align: middle;
+
+      }
+
+    .footer--left {
+
+      padding-top:10px;
+
+    }
+
+    .footer--right {
+
+      text-align: right;
+      
+      .site-nav {
+
+        a {
+
+          color: $black;
+          display: inline-block;
+          font-family: $font;
+          font-weight: 500;
+          margin-right: 7px;
+          padding: $footer-nav-link-padding;
+          text-decoration: none;
+
+            &:hover {
+
+              background: darken($footer-background, 10%);
+
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+}

@@ -1,0 +1,80 @@
+header.global {
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid darken(#f7f8fa, 10%);
+  position: relative;
+  height: 100px;
+  overflow: hidden;
+  background: #f7f8fa;
+  border-top: 10px solid #f7f8fa;
+}
+
+header.global nav {
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+  margin: 0 auto;
+  max-width: 1200px;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+
+  .ideabot {
+    position: relative;
+    flex: 1;
+
+    svg {
+      margin-top: 10px;
+      height: 92px;
+      position: relative;
+      z-index: 2;
+    }
+    blockquote {
+        background: #3c3d41;
+        color: #DDD;
+        padding: 12px 15px ;
+        margin: 0;
+        position: absolute;
+        top: 5px;
+        left: 75px;
+        z-index: 1;
+        font-size: 12px;
+        line-height: 1.6em;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-weight: 500;
+
+        strong {
+          color: #fff;
+          font-size: 1.6em;
+          font-weight: normal;
+          display: inline-block;
+          font-style: italic;
+          margin: 0 3px;
+          font-family: 'Playfair Display', serif;
+          text-transform: lowercase;
+
+          text-shadow: 1px 1px 0 #000;
+        }
+
+        &:after {
+          content: "";
+          position: absolute;
+          bottom: -15px;
+          left: 0px;
+          border-width: 15px 15px 0 0;
+          border-style: solid;
+          border-color: lighten(#3c3d41, 20%) transparent;
+          display: block;
+          width: 0;
+        }
+    }
+  }
+
+  ul.navigation {
+    flex: 1;
+    text-align: right;
+
+    // padding-top: 13px;
+  }
+}

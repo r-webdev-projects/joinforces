@@ -1,0 +1,11 @@
+- @comments.each do |comment|
+  .comment
+    .comment__timeline
+      .avatar = image_tag comment.user.try(:gravatar_url)
+    .comment__content
+      .comment__author
+        .name = comment.user.try(:full_name)
+      .comment__posted_on 
+        = time_ago_in_words(comment.created_at)
+        |  ago
+      .comment__message = comment.body
