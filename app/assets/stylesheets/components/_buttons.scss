@@ -5,11 +5,16 @@ button, a.button {
     vertical-align: middle;
     font-weight: 600;
     padding: 0px 25px;
-    // border: 1px solid #838d90;
     letter-spacing: 2px;
     line-height: 3em;
     border-radius: 10em;
     color: #3c3d41;
     text-align: center;
+    background: #EFEFEF;
+    border-top-color: darken(#EEE, 10%);
+    border-left-color: darken(#EEE, 10%);
+    border-bottom-color: darken(#EEE, 20%);
+    border-right-color: darken(#EEE, 20%);
+    outline: none;
 }
 

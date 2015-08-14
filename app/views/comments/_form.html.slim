@@ -6,8 +6,11 @@
         - @comment.errors.full_messages.each do |msg|
           li = msg
 
-  .field
-    = f.text_area :body, rows: 8
-
-  .actions
-    = f.submit
+  .comment
+    .comment__timeline
+      .avatar = image_tag current_user.gravatar_url
+    .comment__content
+      .comment__message
+        = f.text_area :body, rows: 8
+      .comment__actions.right
+        = f.button 'Comment', class: 'button'

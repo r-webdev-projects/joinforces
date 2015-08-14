@@ -49,6 +49,10 @@
         @include span(12/12);
         display: block;
         font-size: 16px;
+
+        textarea {
+          width: 100%;
+        }
       }
 
       &:hover {
@@ -61,6 +65,11 @@
       display: block;
       clear: both;
       padding-top: 5px;
+
+      &.right {
+        text-align: right;
+        margin-right: -10px;
+      }
 
       a {
         font-size: 14px;
