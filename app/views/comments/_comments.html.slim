@@ -1,7 +1,8 @@
 - @comments.each do |comment|
   .comment
     .comment__author = comment.user.try(:full_name)
-    / .comment__author = comment.user(:id)
-    .comment__posted_on
+    .comment__posted_on 
+      = time_ago_in_words(comment.created_at)
+      |  ago
     .comment__message = comment.body
     / = debug(comment)
