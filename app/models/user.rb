@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-
   has_many :ideas
 
   validates :first_name, presence: true
@@ -21,4 +20,8 @@ class User < ActiveRecord::Base
     name
   end
 
+  def gravatar_url
+    gravatar_id = Digest::MD5::hexdigest(self.email).downcase
+    "http://gravatar.com/avatar/#{gravatar_id}.png"
+  end
 end
