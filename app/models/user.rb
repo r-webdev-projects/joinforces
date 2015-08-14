@@ -33,7 +33,7 @@ class User < ActiveRecord::Base
 
   def gravatar_url(size = '48')
     gravatar_id = Digest::MD5::hexdigest(self.email).downcase
-    "http://gravatar.com/avatar/#{gravatar_id}.png?s=#{size}"
+    "//gravatar.com/avatar/#{gravatar_id}.png?s=#{size}"
   end
 
   def self.find_for_database_authentication(warden_conditions)
