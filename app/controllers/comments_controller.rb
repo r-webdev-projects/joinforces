@@ -28,6 +28,25 @@ class CommentsController < ApplicationController
     redirect_to idea_path(@idea), notice: 'Idea was successfully destroyed.'
   end
 
+  def heart
+    @idea = Idea.find(params[:idea_id])
+    @comment = Comment.find(params[:id])
+    @user = current_user
+
+    @comment.liked_by @user
+
+    redirect_to idea_path(@idea)
+  end
+
+  def break_up
+    @idea = Idea.find(params[:idea_id])
+    @comment = Comment.find(params[:id])
+    @user = current_user
+
+    @comment.unliked_by @user
+    redirect_to idea_path(@idea)
+  end
+
 private
 
   def load_commentable

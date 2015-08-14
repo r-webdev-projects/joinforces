@@ -10,5 +10,14 @@
         |  ago
       .comment__message = comment.body
       .comment__actions
+        - if user_signed_in? && current_user.voted_for?(comment)
+          = link_to break_up_idea_comment_path(@idea, comment), method: :break_up, class: 'heart' do
+            = inline_svg "heart.svg", class: 'filled'
+        - else
+          = link_to heart_idea_comment_path(@idea, comment), method: :heart, class: 'heart' do
+            = inline_svg "heart.svg"
+        span.divider
+        = link_to "Reply"
         - if comment_by_current_user?(comment)
+          span.divider
           = link_to 'Delete Comment', idea_comment_path(@idea, comment), :method => :delete

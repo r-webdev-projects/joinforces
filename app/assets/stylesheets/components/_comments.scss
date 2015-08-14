@@ -57,5 +57,48 @@
         }
       }
     }
+    .comment__actions {
+      display: block;
+      clear: both;
+      padding-top: 5px;
+
+      a {
+        font-size: 14px;
+        line-height: 1em;
+        color: #AAA;
+        display: inline-block;
+
+        &:hover {
+          color: #444;
+        }
+
+        &.heart {
+          position: relative;
+          top: -1px;
+
+          svg {
+            height: 1em;
+            display: inline-block;
+            vertical-align: middle;
+            transition: all .15s linear;
+
+            path {
+              transition: all .1s linear;
+              stroke: black;
+              fill: white;
+            }
+            &:hover, &.filled {
+              path {
+                stroke: red;
+                fill: red;
+              }
+            }
+            &:hover {
+              transform: scale(1.25);
+            }
+          }
+        }
+      }
+    }
   }
 }

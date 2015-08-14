@@ -10,7 +10,10 @@ Rails.application.routes.draw do
 
   # Ideas
   resources :ideas do
-    resources :comments
+    resources :comments do
+      post 'heart', on: :member
+      post 'break_up', on: :member
+    end
     resources :support
     get '/kickoff' => 'ideas#kickoff', as: :kickoff
   end
