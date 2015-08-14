@@ -49,9 +49,11 @@
         @include span(12/12);
         display: block;
         font-size: 16px;
+        white-space: pre;
 
         textarea {
           width: 100%;
+          margin: 0;
         }
       }
 
@@ -68,7 +70,6 @@
 
       &.right {
         text-align: right;
-        margin-right: -10px;
       }
 
       a {
