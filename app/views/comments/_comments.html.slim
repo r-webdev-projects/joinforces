@@ -1,3 +1,7 @@
 - @comments.each do |comment|
   .comment
-    = comment.body
+    .comment__author = comment.user.try(:full_name)
+    / .comment__author = comment.user(:id)
+    .comment__posted_on
+    .comment__message = comment.body
+    / = debug(comment)
