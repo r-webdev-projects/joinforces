@@ -1,8 +1,104 @@
-.signupForm {
-	border:2px solid black;
-	border-radius: 5px;
-	padding:30px;
-	margin: 30px auto;
-  width: 400px;
+.form {
+  border: 2px solid $black;
+  border-radius: 5px;
+  padding: 30px;
+}
+
+.forgot_password {
+  margin-bottom: 10px;
+  position: relative;
+
+  a {
+    bottom: 30px;
+    color: $blue;
+    position: absolute;
+    right: 10px;
+
+    &:hover {
+      background: transparent;
+      color: $purple;
+    }
+  }
+}
+
+.remember {
+  float: left;
+  margin-bottom: 20px;
+}
+
+label {
+  float: left;
+}
+
+.submit,
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.alert {
+  width: 100%;
+  text-align: left;
+}
+
+.terms {
+  font-size: 12px;
+}
+
+.form__footer {
+  border-top: 1px solid $gray;
+  margin-top: 20px;
+  padding-top: 20px;
+
+  a {
+    color: $blue;
+
+    &:hover {
+      background: transparent;
+      color: $purple;
+    }
+  }
+}
+
+.idea_page {
+  border: 2px solid $black;
+  border-radius: 5px;
+  padding: 30px;
+  margin: 30px auto;
+  min-width: 600px;
   text-align: center;
+
+  p {
+    font-weight:400;
+    float: left;
+  }
+
+  a {
+    clear: both;
+    margin: 20px auto;
+    display: inline-block;
+    width: 150px;
+    height: 40px;
+    border: 2px solid $dark-blue;
+    border-radius: 5px;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 700;
+    cursor: pointer;
+    background: $dark-blue;
+    color: $white;
+    text-decoration: none;
+
+    &:hover {
+      background: transparent;
+      color: $dark-blue;
+    }
+
+    &:active {
+      border: 2px solid darken($dark-blue, 5%);
+      color: darken($dark-blue, 10%);
+    }
+  }
 }

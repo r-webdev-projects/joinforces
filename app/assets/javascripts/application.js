@@ -12,3 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+
+//= require components/signup
+//= require components/login
