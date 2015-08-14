@@ -10,4 +10,10 @@ button, a.button {
     border-radius: 10em;
     color: #3c3d41;
     text-align: center;
+    background: #EFEFEF;
+    border-top-color: darken(#EEE, 10%);
+    border-left-color: darken(#EEE, 10%);
+    border-bottom-color: darken(#EEE, 20%);
+    border-right-color: darken(#EEE, 20%);
+    outline: none;
 }
