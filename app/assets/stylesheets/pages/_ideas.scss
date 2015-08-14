@@ -77,7 +77,7 @@
     display: block;
     width: 100%;
     position: absolute;
-    bottom: calc(100% + 13px);
+    bottom: 100%;
     font-size: 0;
 
     & > * {
