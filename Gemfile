@@ -21,7 +21,7 @@ gem 'devise'
 
 # For commenting
 gem 'closure_tree'
-# gem 'acts_as_votable'
+gem 'acts_as_votable'
 
 
 group :development, :test do
