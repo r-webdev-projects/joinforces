@@ -13,4 +13,10 @@
   &.square img {
     border-radius: 50%;
   }
+
+  &.large {
+    img {
+      height: 200px;
+    }
+  }
 }

@@ -1,0 +1,54 @@
+main.users {
+  @include cf();
+  width: 100%;
+  max-width: 1200px;
+  padding: 30px 0;
+  margin: 0 auto;
+
+  aside {
+    @include column(3/10);
+  }
+
+  h3 {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.3px;
+  }
+}
+
+section.profile {
+  @include cf();
+  border: 1px solid $clouds;
+  border-radius: 2px;
+  text-align: center;
+  padding: 30px;
+
+  .avatar {
+    width: 100%;
+    display: block;
+
+    img {
+      margin: 0 auto 30px auto;
+      display: block;
+    }
+
+    span {
+      display: block;
+
+      &.username {
+        font-weight: 600;
+        font-size: 24px;
+        color: black;
+        letter-spacing: .5px;
+      }
+      &.location {
+        font-size: 12px;
+        font-weight: 300;
+        color: #888;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+    }
+  }
+}
+
