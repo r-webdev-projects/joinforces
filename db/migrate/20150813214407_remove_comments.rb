@@ -1,5 +1,7 @@
 class RemoveComments < ActiveRecord::Migration
   def change
-    drop_table :comments, if_exists: true
+    if table_exists?(:comments)
+      drop_table :comments
+    end
   end
 end
