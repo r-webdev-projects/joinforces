@@ -1,7 +1,3 @@
-// -----------------------------------------------------------------------------
-// Primary Palette
-// -----------------------------------------------------------------------------
-
 $turquoise:      #1ABC9C !default;
 $emerald:        #2ECC71 !default;
 $peter-river:    #3498DB !default;
@@ -13,9 +9,7 @@ $alizarin:       #E74C3C !default;
 $clouds:         #ECF0F1 !default;
 $concrete:       #95A5A6 !default;
 
-// -----------------------------------------------------------------------------
-// Secondary Palette
-// -----------------------------------------------------------------------------
+
 $green-sea:      #16A085 !default;
 $nephritis:      #27AE60 !default;
 $belize-hole:    #2980B9 !default;
@@ -27,11 +21,8 @@ $pomegranate:    #C0392B !default;
 $silver:         #BDC3C7 !default;
 $asbestos:       #7F8C8D !default;
 
-// -----------------------------------------------------------------------------
-// Common Names
-// -----------------------------------------------------------------------------
 $green:          $emerald;
-$blue:           $peter-river;
+$blue:           #2e71f1 !default;
 $purple:         $amethyst;
 $yellow:         $sunflower;
 $orange:         $citrus;
@@ -39,11 +30,6 @@ $red:            $alizarin;
 $gray:           $silver;
 $dark-gray:      $asbestos;
 $dark-blue:      $midnight-blue;
-
-// -----------------------------------------------------------------------------
-// Color list
-// -----------------------------------------------------------------------------
-
-$color-palette-names: turquoise emerald peter-river amethyst wet-asphalt sunflower carrot alizarin clouds concrete green-sea nephritis belize-hole wisteria midnight-blue citrus pumpkin pomegranate silver asbestos;
-$color-palette: $turquoise $emerald $peter-river $amethyst $wet-asphalt $sunflower $carrot $alizarin $clouds $concrete $green-sea $nephritis $belize-hole $wisteria $midnight-blue $citrus $pumpkin $pomegranate $silver $asbestos;
+$white:          #FFF;
+$black:          #000;
 

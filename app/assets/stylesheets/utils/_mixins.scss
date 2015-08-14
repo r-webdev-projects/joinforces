@@ -1,0 +1,6 @@
+/* Vertically center element within its parent */
+@mixin vertical-center {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
