@@ -26,15 +26,13 @@
         .stat
           .icon = inline_svg 'talk.svg'
           .value = idea.comments.count
-          .label = "comments".pluralize(idea.comments.count)
+          .label = "comment".pluralize(idea.comments.count)
 
         .stat
           .icon
             = inline_svg 'user.svg'
-          .value
-            | 30
-          .label
-            | Supporters
+          .value = idea.votes_for.size
+          .label = "supporter".pluralize(idea.votes_for.size)
 
         .stat
           .icon
