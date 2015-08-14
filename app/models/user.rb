@@ -17,6 +17,9 @@ class User < ActiveRecord::Base
 
   acts_as_voter
 
+  extend FriendlyId
+  friendly_id :username, use: [:slugged, :finders]
+
   def full_name
     name = ""
     if self.first_name.present?
