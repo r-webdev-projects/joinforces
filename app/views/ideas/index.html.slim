@@ -30,12 +30,9 @@
         p.ideas__listing-description = idea.description
       .ideas__status
         .stat
-          .icon
-            = inline_svg 'talk.svg'
-          .value
-            | 30
-          .label
-            | comments
+          .icon = inline_svg 'talk.svg'
+          .value = idea.comments.count
+          .label = "comments".pluralize(idea.comments.count)
 
         .stat
           .icon
