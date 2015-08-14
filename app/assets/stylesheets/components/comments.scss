@@ -1,0 +1,61 @@
+.comments {
+  border-top: 1px solid $clouds;
+  margin-top: 30px;
+  padding: 0 30px;
+
+  .comment {
+    @include cf();
+    position: relative;
+    padding: 15px 0;
+
+    &:before {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 3px;
+      height: 100%;
+      left: 20px;
+      top: 0;
+      background: $clouds;
+      z-index: -1;
+    }
+
+    .comment__timeline {
+      @include span(1/12);
+    }
+    .comment__content {
+      @include cf();
+      @include span(11/12);
+
+      .comment__author {
+        @include span(5/10);
+        font-weight: 600;
+        letter-spacing: .5px;
+        font-size: 14px;
+        text-transform: lowercase;
+        color: black;
+      }
+      .comment__posted_on {
+        @include span(5/10);
+        font-weight: 300;
+        letter-spacing: .5px;
+        font-size: 14px;
+        display: none;
+      }
+      .comment__posted_on {
+        text-align: right;
+      }
+      .comment__message {
+        @include span(12/12);
+        display: block;
+        font-size: 16px;
+      }
+
+      &:hover {
+        .comment__posted_on {
+          display: block;
+        }
+      }
+    }
+  }
+}

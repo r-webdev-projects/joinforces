@@ -197,11 +197,26 @@
   }
 }
 
-.new-idea-form {
-  background: #fff;
-  border:1px solid #e7e7e7;
-  border-radius: 4px;
-  margin: 20px auto;
-  float: none;
-  padding: 30px;
+main.idea {
+  @include cf();
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 0;
+
+  .idea-details {
+    @include column(7/10);
+  }
+  aside {
+    @include column(3/10);
+  }
 }
+
+.idea-details {
+  h1 {
+    margin-bottom: 15px;
+  }
+}
+
+
+

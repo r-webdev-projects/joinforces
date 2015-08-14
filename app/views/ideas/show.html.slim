@@ -1,16 +1,12 @@
-.idea__detail
-  .comment-stream
-    .comment-stream__title = @idea.title
-    .comment-stream__description = @idea.description
+main.idea
+  .idea-details
+    h1 = @idea.title
+    .idea-details__description = @idea.description
 
-    = render 'comments/comments'
-    = render 'comments/form'
-    .comment-stream__comment.row
-      .comment__timeline
-      .comment_content
-        .comment__author
-        .comment__posted_on
-        .comment__message
-        .comment__acounts 
-
+    .comments
+      = render 'comments/comments'
+      = render 'comments/form'
+    
   aside.idea__detail-sidebar
+    .hello
+      | HI HIHIHIH
