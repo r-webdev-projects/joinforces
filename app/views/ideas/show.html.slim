@@ -5,7 +5,15 @@ main.idea
 
     .comments
       = render 'comments/comments'
-      = render 'comments/form'
+      - if user_signed_in?
+        = render 'comments/form'
+      - else
+        .user-not-signed-in
+          = link_to "Sign in", new_user_session_path
+          |  or 
+          = link_to "Register", new_user_registration_path
+          |  to comment
+        
     
   aside.idea__detail-sidebar
     .hello
