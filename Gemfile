@@ -23,6 +23,7 @@ gem 'devise'
 # For commenting
 gem 'closure_tree'
 gem 'acts_as_votable'
+gem 'redcarpet'
 
 
 group :development, :test do
