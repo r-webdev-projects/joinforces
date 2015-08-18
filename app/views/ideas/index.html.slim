@@ -18,8 +18,8 @@
         = image_tag "https://unsplash.it/400/?random"
       .ideas__listing-details
         .avatar.square
-          = link_to '' do
-            = image_tag 'https://en.gravatar.com/userimage/7875630/5f276b7cc6943ef946bf871f1bd8397b.png'
+          = link_to user_path(idea.user) do
+            =  image_tag idea.user.gravatar_url, alt: "#{idea.user.username} profile picture"
         = link_to idea.title, idea_path(idea), class: 'ideas__listing-title'
         p.ideas__listing-description = idea.description
       .ideas__status
