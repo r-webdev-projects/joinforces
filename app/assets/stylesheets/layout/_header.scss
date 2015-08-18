@@ -78,3 +78,34 @@ header.global nav {
     // padding-top: 13px;
   }
 }
+
+header.page {
+  background: #3c3d41;
+  padding: 30px;
+
+  section.content {
+    width: 100%;
+    max-width: $max-width;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  h1 {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: $playfair;
+    line-height: 1.25em;
+    letter-spacing: .3px;
+
+    a {
+      font-style: italic;
+      color: white;
+
+      &:hover {
+        color: white;
+        opacity: .6;
+      }
+    }
+  }
+}

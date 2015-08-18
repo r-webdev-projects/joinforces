@@ -12,3 +12,12 @@ body {
 
 // Typographic Reset
 @include typographic;
+
+a {
+  transition: all .2s;
+  text-decoration: none;
+
+  &:hover {
+    color: $blue;
+  }
+}

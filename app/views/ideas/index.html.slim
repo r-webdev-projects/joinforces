@@ -1,50 +1,40 @@
-.ideas__listing
-  /.ideas__filter-bar
-    = link_to 'Trending', "", class: 'ideas__filter'
-    = link_to 'Live', "", class: 'ideas__filter'
-    = link_to 'New', "", class: 'ideas__filter'
+header.page
+  section.content
+    h1 
+      | Find a product you'd like to work on or
+      br
+      = link_to "start your own", new_idea_path
+      |  that others can work on with you.  
 
-    ul.ideas__filter-topics
-      li = link_to 'Entertainment & Games', ""
-      li = link_to 'Mobile', ""
-      li = link_to 'Productivty & Tools', ""
+main.ideas
+  .ideas__listing
+    - @ideas.each do |idea|
+      .ideas__listing-item
+        .ideas__listing-image
+          = image_tag "https://unsplash.it/400/?random"
+        .ideas__listing-details
+          .avatar.square
+            = link_to user_path(idea.user) do
+              =  image_tag idea.user.gravatar_url, alt: "#{idea.user.username} profile picture"
+          = link_to idea.title, idea_path(idea), class: 'ideas__listing-title'
+          p.ideas__listing-description = idea.description
+        .ideas__status
+          .stat
+            = link_to "", idea_path(idea, anchor: 'comments'), class: 'link'
+            .icon = inline_svg 'talk.svg'
+            .value = idea.comments.count
+            .label = "comment".pluralize(idea.comments.count)
 
-    .ideas__filter-search
-      input type='search'
+          .stat
+            .icon
+              = inline_svg 'user.svg'
+            .value = idea.votes_for.size
+            .label = "supporter".pluralize(idea.votes_for.size)
 
-  - @ideas.each do |idea|
-    .ideas__listing-item
-      .ideas__listing-image
-        = image_tag "https://unsplash.it/400/?random"
-      .ideas__listing-details
-        .avatar.square
-          = link_to user_path(idea.user) do
-            =  image_tag idea.user.gravatar_url, alt: "#{idea.user.username} profile picture"
-        = link_to idea.title, idea_path(idea), class: 'ideas__listing-title'
-        p.ideas__listing-description = idea.description
-      .ideas__status
-        .stat
-          = link_to "", idea_path(idea, anchor: 'comments'), class: 'link'
-          .icon = inline_svg 'talk.svg'
-          .value = idea.comments.count
-          .label = "comment".pluralize(idea.comments.count)
-
-        .stat
-          .icon
-            = inline_svg 'user.svg'
-          .value = idea.votes_for.size
-          .label = "supporter".pluralize(idea.votes_for.size)
-
-        .stat
-          .icon
-            = inline_svg 'pen.svg'
-          .value
-            | 30
-          .label
-            | pens
-
-._page-header
-    
-    .call-to-action
-      button.btn.btn-default.btn-lg type="button"
-        = link_to 'Post an idea', new_idea_path
+          .stat
+            .icon
+              = inline_svg 'pen.svg'
+            .value
+              | 30
+            .label
+              | pens
