@@ -26,3 +26,35 @@ ul.navigation {
     }
   }
 }
+
+.coming-soon {
+  blockquote {
+    background: #3c3d41;
+    color: #DDD;
+    padding: 8px 15px ;
+    margin: 0;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    z-index: 1;
+    font-size: 12px;
+    line-height: 1.6em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 500;
+    width: 150px;
+    display: none;
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 0px;
+      border-width: 15px 15px 0 0;
+      border-style: solid;
+      border-color: lighten(#3c3d41, 20%) transparent;
+      display: block;
+      width: 0;
+    }
+  }
+}

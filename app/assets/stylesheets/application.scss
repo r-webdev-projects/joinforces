@@ -37,21 +37,25 @@
 @import 'vendors/jeet/index';
 
 @import 'utils/colors';
+@import 'utils/variables';
 @import 'utils/mixins';
 
 @import 'base/normalize';
 @import 'base/typography';
 @import 'base/base';
 
+@import 'layout/base';
 @import 'layout/navigation';
 @import 'layout/header';
 @import 'layout/footer';
 
 @import 'components/alerts';
+@import 'components/animate';
 @import 'components/avatars';
 @import 'components/buttons';
 @import 'components/comments';
 @import 'components/dropdowns';
+@import 'components/filters';
 @import 'components/form';
 @import 'components/icons';
 @import 'components/inputs';
