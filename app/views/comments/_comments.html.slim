@@ -8,7 +8,7 @@
       .comment__posted_on 
         = time_ago_in_words(comment.created_at)
         |  ago
-      .comment__message = comment.body
+      .comment__message = markdown(comment.body)
       .comment__actions
         - if user_signed_in? && current_user.voted_for?(comment)
           = link_to break_up_idea_comment_path(@idea, comment), method: :break_up, class: 'heart' do

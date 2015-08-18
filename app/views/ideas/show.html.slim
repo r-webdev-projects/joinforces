@@ -1,7 +1,7 @@
 main.idea
   .idea-details
     h1 = @idea.title
-    .idea-details__description = @idea.description
+    .idea-details__description = markdown(@idea.description)
 
     .comments#comments
       = render 'comments/comments'
