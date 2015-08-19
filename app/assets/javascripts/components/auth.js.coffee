@@ -36,9 +36,8 @@ jQuery ->
       unless container.hasClass('valid')
         container.addClass('valid')
 
-    else if $(this).val().length == 0
+    else if usernameField.pristine && $(this).val().length == 0
       usernameField.val("")
-      usernameField.pristine = true
 
   emailField.blur ->
     # If email and username field is blank, restore username field to original
@@ -53,11 +52,12 @@ jQuery ->
 
   usernameField.change ->
     # If user manually changes the username, don't let it be updated via the email field
-
+    # Unless they clear it and edit the email again
     if $(this).val()
       usernameField.pristine = false
       greeting.html("Hey " + $(this).val() + "! ")
     else
+      usernameField.pristine = true
       greeting.html("")
 
 
