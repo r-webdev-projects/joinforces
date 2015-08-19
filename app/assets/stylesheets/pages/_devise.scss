@@ -4,13 +4,15 @@
   position: absolute;
   top: 0;
   left: 0;
-
+  background-color: #FFF;
+  background-image: image-url('halftone.png');
+  background-blend-mode: multiply;
 
   .figure {
-    @include align(vertical);
     width: 20%;
     max-width: 300px;
-    position: relative;
+    position: absolute;
+    bottom: -4px;
 
     img {
       display: block;
@@ -75,4 +77,48 @@ main.devise {
   justify-content: center;
   position: relative;
   z-index: 100;
+}
+
+form {
+  border: 1px solid transparentize($gray, .5);
+  border-radius: 2px;
+  padding: 30px;
+  background: transparentize(#FFF, .1);
+
+  .actions {
+    text-align: right;
+  }
+}
+
+input[type='submit'] {
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 11px;
+  vertical-align: middle;
+  font-weight: 600;
+  padding: 0px 25px;
+  letter-spacing: 2px;
+  line-height: 3em;
+  border-radius: 10em;
+  color: $blue;
+  text-align: center;
+  background: #FFF;
+  border: 1px solid $blue;
+  outline: none;
+  margin: 0;
+
+  &:hover {
+    background: $blue;
+    color: $white;
+  }
+}
+
+h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 24px;
+  letter-spacing: 1px;
+  margin: 0;
+  padding: 15px;
 }
