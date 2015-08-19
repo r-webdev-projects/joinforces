@@ -29,10 +29,10 @@ gem 'acts_as_votable'
 gem 'redcarpet'
 
 
-
 group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem "better_errors"
 
   # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
   gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

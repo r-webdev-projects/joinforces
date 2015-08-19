@@ -6,8 +6,9 @@ class User < ActiveRecord::Base
                        :uniqueness => { :case_sensitive => false }
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
-         # :confirmable, :lockable, :timeoutable and :omniauthable
+         :recoverable, :rememberable, :trackable, :validatable,
+         :omniauthable, :omniauth_providers => [:github, :twitter, :google_oauth2]
+         # :confirmable, :lockable, :timeoutable
 
   cattr_accessor :current_user
 
@@ -42,6 +43,25 @@ class User < ActiveRecord::Base
       where(conditions.to_hash).where(["lower(username) = :value OR lower(email) = :value", { :value => login.downcase }]).first
     else
       where(conditions.to_hash).first
+    end
+  end
+
+  def self.from_omniauth(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      user.email = auth.info.email
+      user.username = auth.info.nickname
+      user.password = Devise.friendly_token[0,20]
+      # user.name = auth.info.name   # assuming the user model has a name
+      # user.image = auth.info.image # assuming the user model has an image
+    end
+  end
+
+  def self.new_with_session(params, session)
+    super.tap do |user|
+      # if data = session["devise.twitter_data"] && session["devise.twitter_data"]
+      #   user.email = data['info']['email'] if user.email.blank?
+      #   user.username = data['info']['nickname'] if user.username.blank?
+      # end
     end
   end
 end
