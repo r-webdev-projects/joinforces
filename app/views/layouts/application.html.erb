@@ -27,12 +27,19 @@
 
   </head>
   <body>
-    <div class="container">
-      <%= render 'shared/navigation' %>
+    <% unless devise_controller? %>
+      <div class="container">
+        <%= render 'shared/navigation' %>
 
-      <%= yield %>
+        <%= yield %>
 
-      <%= render 'shared/footer' %>
-    </div>
+        <%= render 'shared/footer' %>
+      </div>
+    <% else %>
+      <%= render 'devise/shared/layout' %>
+      <main class='devise'>
+        <%= yield %>
+      </main>
+    <% end %>
   </body>
 </html>

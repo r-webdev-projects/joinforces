@@ -1,0 +1,75 @@
+.background {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+
+  .figure {
+    @include align(vertical);
+    width: 20%;
+    max-width: 300px;
+    position: relative;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-left: -33%;
+    }
+  }
+
+  blockquote {
+    background: #3c3d41;
+    color: #DDD;
+    padding: 12px 15px ;
+    margin: 0;
+    position: absolute;
+    top: 5px;
+    left: 55%;
+    z-index: 1;
+    font-size: 12px;
+    line-height: 1.6em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 500;
+    min-width: 200px;
+
+
+    strong {
+      color: #fff;
+      font-size: 1.6em;
+      font-weight: normal;
+      display: inline-block;
+      font-style: italic;
+      margin: 0 3px;
+      font-family: 'Playfair Display', serif;
+      text-transform: lowercase;
+
+      text-shadow: 1px 1px 0 #000;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 0px;
+      border-width: 15px 15px 0 0;
+      border-style: solid;
+      border-color: lighten(#3c3d41, 20%) transparent;
+      display: block;
+      width: 0;
+    }
+  }
+}
+
+main.devise {
+  height: calc(100vh - 60px);
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 100;
+}

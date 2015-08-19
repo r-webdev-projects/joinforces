@@ -6,6 +6,7 @@
   before_filter         :set_current_user
   before_action         :configure_permitted_parameters, if: :devise_controller?
 
+
   protected
 
   def configure_permitted_parameters
@@ -17,6 +18,5 @@
   def set_current_user
     User.current_user = current_user
   end
-
 
 end
