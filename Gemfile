@@ -19,11 +19,15 @@ gem 'friendly_id'
 
 # For user authentication
 gem 'devise'
+gem 'omniauth-github'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-twitter'
 
 # For commenting
 gem 'closure_tree'
 gem 'acts_as_votable'
 gem 'redcarpet'
+
 
 
 group :development, :test do
