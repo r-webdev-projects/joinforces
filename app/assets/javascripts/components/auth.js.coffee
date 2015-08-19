@@ -25,6 +25,8 @@ jQuery ->
   usernameField = form.find("#user_username")
   usernameField.pristine = true;
 
+  greeting = $('.figure blockquote span')
+
   emailField.keyup ->
     # Only update username if user hasn't changed it
     if usernameField.pristine & $(this).val().length > 0
@@ -45,11 +47,19 @@ jQuery ->
       usernameField.pristine = true
       if usernameField.parent('.field').hasClass('valid')
         usernameField.parent('.field').removeClass('valid')
+    else if usernameField.val()
+      # Once user finishes typing, add a little greeting in the blockquote
+      greeting.html("Hey " + usernameField.val() + "! ")
 
   usernameField.change ->
     # If user manually changes the username, don't let it be updated via the email field
+
     if $(this).val()
       usernameField.pristine = false
+      greeting.html("Hey " + $(this).val() + "! ")
+    else
+      greeting.html("")
+
 
   emailToUsername = (email) ->
     local = email.match(/^[^@]+/).toString()
