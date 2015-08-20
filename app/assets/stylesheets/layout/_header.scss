@@ -4,7 +4,7 @@ header.global {
   border-bottom: 1px solid darken(#f7f8fa, 10%);
   position: relative;
   height: 100px;
-  overflow: hidden;
+
   background: #f7f8fa;
   border-top: 10px solid #f7f8fa;
 }
@@ -12,7 +12,6 @@ header.global {
 header.global nav {
   margin: 0 auto;
   padding: 0;
-  overflow: hidden;
   margin: 0 auto;
   max-width: 1200px;
   height: 100px;
@@ -21,6 +20,8 @@ header.global nav {
 
   .ideabot {
     position: relative;
+    overflow: hidden;
+    height: 90px;
     flex: 1;
 
     svg {
@@ -74,7 +75,7 @@ header.global nav {
   ul.navigation {
     flex: 1;
     text-align: right;
-
+    justify-content: flex-end;
     // padding-top: 13px;
   }
 }

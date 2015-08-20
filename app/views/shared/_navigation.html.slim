@@ -20,7 +20,12 @@ header.global
 
           
       - if user_signed_in?
-        li.navigation-item = link_to "Logout", destroy_user_session_path, method: :delete, class: 'button'
+        li.navigation-item.avatar-menu
+          =  image_tag current_user.gravatar_url(100), alt: "#{current_user.username} profile picture", class: 'avatar'
+          ul.subnavigation
+            li.navigation-item = link_to "Profile", user_path(current_user)
+            li.navigation-item = link_to "Settings", '#'
+            li.navigation-item = link_to "Logout", destroy_user_session_path, method: :delete
       - else
         li.navigation-item = link_to "Register", new_user_registration_path, class: 'button'
         li.navigation-item = link_to "Sign in", new_user_session_path, class: 'button'

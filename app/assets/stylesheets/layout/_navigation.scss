@@ -27,6 +27,111 @@ ul.navigation {
   }
 }
 
+.avatar-menu {
+  position: relative;
+  margin-left: 15px;
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    height: 14px;
+    width: 14px;
+    z-index: 10;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABY0lEQVQ4T5VT/1XCQAxOsoA4gddbQNjADcQNdIM6gTiBbKAbiBPABsICXJxAXCDxfTWtpQ+eeH9dk1zy/UiZjpyU0khEPpE2s3NV3R0q5TaIB7i3hSmlWxF5jgZ3qvqC+7CuaYAgMy9xZea5me2YuWbmhLy7q7vPRWTk7jXmlFImyHUNRESJ6OwYpUH8y8wS0HYUcs4zInqIiR8xaRUPr4CMmS/i+3G73aL+BwFOzhnQntwdj8dD0YLmGk3MrNOEQ5RrZp6Bs5ndqOoCIjJzi+g+YlMReQ1NgOCNc87e59daVlWVtpDdfQ3RUkpJREq//tQGm1LK+GCDoDANCuDXUmhiIWqtqquUUksBOiG3OCQiPJ8cEfE9dPoVsedC30Y0gSubyF+Gjc1iEdG+jWFRYeZmnf867r5z92pvkaqqgseYMCciFGCVm8XBbgABEWFADRsh6t4i/edn6uvTiTiEferv/A2dOgXK5SutGwAAAABJRU5ErkJggg==');
+    background-size: cover;
+    transition: all .5s;
+  }
+
+  .avatar {
+    height: 40px;
+    width: 40px;
+    display: block;
+    position: relative;
+    z-index: 1;
+  }
+
+  .subnavigation {
+    position: absolute;
+    opacity: 0;
+    top: 100%;
+    left: calc(100% - 60px);
+    border: 1px solid $gray;
+    background: transparentize($white, .05);
+    margin: 0;
+    padding: 5px;
+    text-align: center;
+
+    &:before {
+      bottom: 100%;
+      left: 50%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-color: rgba(255, 255, 255, 0);
+      border-bottom-color: #FFFFFF;
+      border-width: 10px;
+      margin-left: -10px;
+    }
+
+    &:after, &:before {
+      bottom: 100%;
+      left: 50%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+    }
+
+    &:after {
+      border-color: rgba(255, 255, 255, 0);
+      border-bottom-color: #FFFFFF;
+      border-width: 5px;
+      margin-left: -5px;
+    }
+    &:before {
+      border-color: transparentize($gray, 1);
+      border-bottom-color: $gray;
+      border-width: 6px;
+      margin-left: -6px;
+    }
+
+    li {
+
+      a {
+        font-size: 14px;
+        display: block;
+        color: $black;
+        padding: 5px 10px;
+
+        &:hover {
+          color: $blue;
+        }
+      }
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    .subnavigation {
+      opacity: 1;
+      z-index: 10;
+    }
+
+    &:after {
+      transform: rotate(180deg);
+    }
+  }
+}
+
 .coming-soon {
   blockquote {
     background: #3c3d41;
