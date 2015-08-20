@@ -51,6 +51,17 @@ class User < ActiveRecord::Base
       user.email = auth.info.email
       user.username = auth.info.nickname
       user.password = Devise.friendly_token[0,20]
+
+      if auth.provider == 'github'
+        user.github_username = auth.info.nickname
+        user.location = auth.extra.raw_info.location
+        user.short_bio = auth.extra.raw_info.bio
+      elsif auth.provider == 'twitter'
+        user.twitter_username = auth.info.nickname
+        user.location = auth.info.location
+        user.short_bio = auth.info.description
+      end
+
       # user.name = auth.info.name   # assuming the user model has a name
       # user.image = auth.info.image # assuming the user model has an image
     end
