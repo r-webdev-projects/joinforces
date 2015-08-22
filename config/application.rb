@@ -22,5 +22,10 @@ module Collabor8
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    # To use Postmark (postmarkapp.com) for mailing
+    config.action_mailer.delivery_method = :postmark
+    config.action_mailer.postmark_settings = { :api_token => POSTMARK_API_TOKEN }
+
   end
 end
