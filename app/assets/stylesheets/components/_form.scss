@@ -136,51 +136,53 @@ textarea {
 }
 
 .field {
-  position: relative;
-  border: 1px solid $gray;
-  border-radius: 2px;
-  margin-bottom: 20px;
-  padding: 5px 10px 10px 10px;
-
-  &, * {
-    transition: all .2s;
-  }
-
-  label {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    text-transform: uppercase;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: .8px;
-    padding: 0 6px;
-    opacity: 0;
-    color: $gray;
-  }
-
-  input {
+  &:not(.checkbox) {
     position: relative;
-    top: 3px;
-  }
+    border: 1px solid $gray;
+    border-radius: 2px;
+    margin-bottom: 20px;
+    padding: 5px 10px 10px 10px;
 
-  &.focus, &.valid {
+    &, * {
+      transition: all .2s;
+    }
+
     label {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      text-transform: uppercase;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .8px;
+      padding: 0 6px;
+      opacity: 0;
+      color: $gray;
+    }
+
+    input {
+      position: relative;
       top: 3px;
-      opacity: 1;
     }
-    input {
-      top: 11px;
-    }
-  }
 
-  &.focus {
-    border-color: $blue;
-    label {
-      color: $blue;
+    &.focus, &.valid {
+      label {
+        top: 3px;
+        opacity: 1;
+      }
+      input {
+        top: 11px;
+      }
     }
-    input {
-      color: $black;
+
+    &.focus {
+      border-color: $blue;
+      label {
+        color: $blue;
+      }
+      input {
+        color: $black;
+      }
     }
   }
 }

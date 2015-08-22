@@ -87,6 +87,10 @@ form {
 
   .actions {
     text-align: right;
+
+    &.center {
+      text-align: center;
+    }
   }
 }
 
@@ -115,10 +119,31 @@ input[type='submit'] {
 
 h2 {
   text-align: center;
-  text-transform: uppercase;
-  font-weight: 300;
-  font-size: 24px;
-  letter-spacing: 1px;
+  font-weight: 200;
+  font-size: 40px;
+  letter-spacing: 1.2px;
   margin: 0;
-  padding: 15px;
+  line-height: 1em;
+  text-transform: uppercase;
+  padding-bottom: 15px;
+}
+h3 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: $dark-gray;
+  padding: 0 0 15px 0;
+  letter-spacing: 2px;
+  display: none;
+}
+
+.secondary-links {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  padding: 10px;
 }
