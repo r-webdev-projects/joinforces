@@ -23,9 +23,12 @@ module Collabor8
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 
+    config.action_mailer.default_url_options = { host: 'www.joinforces.xyz'}
+
     # To use Postmark (postmarkapp.com) for mailing
     config.action_mailer.delivery_method = :postmark
     config.action_mailer.postmark_settings = { :api_token => ENV['POSTMARK_API_KEY'] }
+
 
   end
 end
