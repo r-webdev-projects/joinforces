@@ -26,7 +26,6 @@ gem 'acts_as_votable'
 gem 'redcarpet'
 
 # For mailing
-gem 'mail'
 gem 'postmark-rails'
 
 group :development, :test do

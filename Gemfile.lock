@@ -215,7 +215,6 @@ DEPENDENCIES
   friendly_id
   inline_svg
   jquery-rails
-  mail
   pg
   postmark-rails
   rails (= 4.2.1)
