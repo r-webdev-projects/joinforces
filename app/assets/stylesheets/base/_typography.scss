@@ -15,12 +15,17 @@ $double-octave  : 4;
 // Sans-serif
 $helvetica     : 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
 $courier       : 'Courier New', 'Courier', 'Lucida Sans Typewriter', 'Lucida Typewriter', 'monospace';
-$avenir        : 'Avenir', 'Avenir W01', 'sans-serif';
+$avenir        : 'Avenir Next', 'Avenir Next W00', $helvetica;
+$sans-serif    : $avenir;
+$default       : $avenir;
+
 
 // Serif
 $baskerville   : 'Baskerville', 'Baskerville old face', 'Hoefler Text', 'Garamond', 'Times New Roman', 'serif';
 $didot         : 'Didot', 'Didot LT STD', 'Hoefler Text', 'Garamond', 'Times New Roman', 'serif';
-$playfair      : 'Playfair Display', 'serif';
+$playfair      : 'Playfair Display', $baskerville;
+$serif         : $playfair;
+$default-serif : $playfair;
 
 
 // Settings
