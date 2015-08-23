@@ -16,5 +16,8 @@
 //= require components/signup
 //= require components/login
 
+//= require mailcheck.min
+
 //= require console.image.min
 //= require secrets/console
+

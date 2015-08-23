@@ -50,6 +50,13 @@ jQuery ->
       # Once user finishes typing, add a little greeting in the blockquote
       greeting.html("Hey " + usernameField.val() + "! ")
 
+    # Check for common misspellings
+    $(this).mailcheck
+      suggested: (element, suggestion) ->
+        $('.email-error-message').append("Did you mean <span class='suggestion'>" + suggestion.full + "</span>?")
+        console.log element
+        console.log suggestion
+
   usernameField.change ->
     # If user manually changes the username, don't let it be updated via the email field
     # Unless they clear it and edit the email again
@@ -60,10 +67,12 @@ jQuery ->
       usernameField.pristine = true
       greeting.html("")
 
-
   emailToUsername = (email) ->
     local = email.match(/^[^@]+/).toString()
     username = local.replace(/[^0-9a-zA-Z\_-]/g, '')
     return username
+
+
+
 
 
