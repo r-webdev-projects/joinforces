@@ -28,6 +28,9 @@ gem 'redcarpet'
 # For mailing
 gem 'postmark-rails'
 
+# For forms
+gem "parsley-rails"
+
 group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
