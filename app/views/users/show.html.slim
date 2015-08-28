@@ -7,6 +7,9 @@ main.users
         span.username = @user.username
         span.location = @user.location.present? ? @user.location : "Add Location"
 
+      section.joshtesting
+        p Test
+
     - if @user.ideas.any?
       section.ideas
         h3 PROPOSED PROJECTS
