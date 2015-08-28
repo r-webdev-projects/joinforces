@@ -1,5 +1,5 @@
-source 'https://rubygems.org'
-ruby '2.1.0'
+source 'http://rubygems.org' # https was preventing bundle from finishing
+ruby '2.1.5' # version of ruby josh has installed
 
 gem 'rails', '4.2.1'
 gem 'pg'
