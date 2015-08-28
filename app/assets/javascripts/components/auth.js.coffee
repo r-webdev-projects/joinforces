@@ -53,9 +53,10 @@ jQuery ->
     # Check for common misspellings
     $(this).mailcheck
       suggested: (element, suggestion) ->
-        $('.email-error-message').append("Did you mean <span class='suggestion'>" + suggestion.full + "</span>?")
-        console.log element
-        console.log suggestion
+        $('.mailcheck-error').remove()
+        $('.email-error-messages .parsley-errors-list').append("<li class='mailcheck-error'>Did you mean <span class='suggestion'>" + suggestion.full + "</span>?</li>")
+      empty: (element) ->
+        $('.mailcheck-error').addClass('success').html("lookin' good")
 
   usernameField.change ->
     # If user manually changes the username, don't let it be updated via the email field

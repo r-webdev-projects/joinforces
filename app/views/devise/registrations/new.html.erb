@@ -2,25 +2,28 @@
   <%= javascript_include_tag 'components/auth' %>
 <% end %>
 
-<h2>Get started</h2>
-<h3>Become creator #<%= total_users.to_i + 1 %></h3>
+<!-- <h2>Get started</h2>
+<h3>Become creator #<%= total_users.to_i + 1 %></h3> -->
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= form_for resource, as: resource_name, url: registration_path(resource_name), data: {parsley_validate: 'true'} do |f| %>
   <%= devise_error_messages! %>
+  <h2>Get started</h2>
+  <h3>Become creator #<%= total_users.to_i + 1 %></h3>
 
   <div class="field">
-    <%= f.email_field :email, autofocus: true, placeholder: 'Email Address' %>
+    <%= f.email_field :email, autofocus: true, placeholder: 'Email Address', required: true, data: {parsley_trigger: 'change', parsley_errors_container: '.email-error-messages'} %>
     <%= f.label :email, 'Email Address' %>
   </div>
-  <span class='email-error-message'></span>
+  <div class='email-error-messages'></div>
 
   <div class="field">
-    <%= f.text_field :username, placeholder: 'Username'%>
+    <%= f.text_field :username, placeholder: 'Username', required: true, data: {parsley_trigger: 'change', parsley_errors_container: '.username-error-messages'}%>
     <%= f.label :username %>
   </div>
+  <div class='username-error-messages'></div>
 
   <div class="field">
-    <%= f.password_field :password, placeholder: 'Password', autocomplete: "off" %>
+    <%= f.password_field :password, placeholder: 'Password', autocomplete: "off", required: true, minlength: '8', data: {parsley_trigger: 'change', parsley_errors_container: '.password-error-messages'} %>
     <%= f.label :password do %>
       Password
       <% if @minimum_password_length %>
@@ -28,6 +31,7 @@
       <% end %>
     <% end %>
   </div>
+  <div class='password-error-messages'></div>
 
 
   <div class="actions">

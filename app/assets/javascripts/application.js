@@ -17,6 +17,8 @@
 //= require components/login
 
 //= require mailcheck.min
+//= require parsley
+//= require parsley.remote
 
 //= require console.image.min
 //= require secrets/console
