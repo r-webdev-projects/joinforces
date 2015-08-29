@@ -5,10 +5,8 @@ main.users
       section.avatar.large
         = image_tag @user.gravatar_url('200')
         span.username = @user.username
+        span.firstname = @user.first_name
         span.location = @user.location.present? ? @user.location : "Add Location"
-
-      section.joshtesting
-        p Test
 
     - if @user.ideas.any?
       section.ideas
