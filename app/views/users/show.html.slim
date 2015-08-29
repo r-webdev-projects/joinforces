@@ -8,6 +8,9 @@ main.users
         span.firstname = @user.first_name
         span.location = @user.location.present? ? @user.location : "Add Location"
 
+    section.editprofile
+      = render 'form'
+
     - if @user.ideas.any?
       section.ideas
         h3 PROPOSED PROJECTS
