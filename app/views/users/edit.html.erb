@@ -1,0 +1,18 @@
+<% provide(:title, "Edit profile") %>
+<h1>Update your profile</h1>
+
+<%= form_for(@user) do |f| %>
+	<%= f.label :first_name %>
+	<%= f.text_field :first_name %>
+
+	<%= f.label :last_name %>
+	<%= f.text_field :last_name %>
+
+	<%= f.label :email %>
+	<%= f.text_field :email %>
+
+	<%= f.label :location %>
+	<%= f.text_field :location %>
+
+	<%= f.submit "Save changes" %>
+<% end %>
