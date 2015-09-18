@@ -19,6 +19,10 @@ Rails.application.routes.draw do
     get '/kickoff' => 'ideas#kickoff', as: :kickoff
   end
 
+  # Users
+  resources :users
+
+
   # Root (homepage)
   root 'ideas#index'
 end
