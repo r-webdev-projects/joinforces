@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  # only allow currently logged in user to edit/update their own profile
+  before_action :logged_in_user, only: [:edit, :update]
 
   def show
     @user = User.find(params[:id])
@@ -25,4 +27,11 @@ class UsersController < ApplicationController
   		params.require(:user).permit(:email, :first_name, :last_name, :location, 
   																 :password, :password_confirmation)
   	end
+
+    def logged_in_user
+      unless user_signed_in?
+        redirect_to login_url
+      end
+    end
+
 end
