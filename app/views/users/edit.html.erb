@@ -10,9 +10,15 @@
 
 	<%= f.label :email %>
 	<%= f.text_field :email %>
-
+	
 	<%= f.label :location %>
 	<%= f.text_field :location %>
+
+	<%= f.label :password %>
+	<%= f.password_field :password %>
+
+	<%= f.label :password_confirmation, "Password (again)" %>
+	<%= f.password_field :password_confirmation %>
 
 	<%= f.submit "Save changes" %>
 <% end %>
