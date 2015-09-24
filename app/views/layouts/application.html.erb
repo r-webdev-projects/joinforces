@@ -31,6 +31,7 @@
     <div class="container">
       <%= render 'shared/navigation' %>
 
+      <!-- flash success/error/notice messages -->
       <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>
       <% end %>
