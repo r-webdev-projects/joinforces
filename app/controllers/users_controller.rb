@@ -17,6 +17,8 @@ class UsersController < ApplicationController
   		redirect_to @user
       flash[:notice] = "Profile updated."
   	else
+      # need to update message to specify what is wrong with form
+      flash[:danger] = "Please correctly fill out the form."
   		render 'edit'
   	end
   end
