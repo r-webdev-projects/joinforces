@@ -19,5 +19,4 @@ main.users
   section.activity-stream
     - if @user.comments.any?
       h3 RECENT COMMENTS
-      - for comment in @user.comments
-        = link_to @user.comments
+      li = render @comments
