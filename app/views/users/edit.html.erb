@@ -14,11 +14,7 @@
 	<%= f.label :location %>
 	<%= f.text_field :location %>
 
-	<!--<%= f.label :password %>
-	<%= f.password_field :password %>
-
-	<%= f.label :password_confirmation, "Password (again)" %>
-	<%= f.password_field :password_confirmation %> -->
+	<%= link_to "Change your password", edit_user_registration_path %>
 
 	<%= f.submit "Save changes" %>
 <% end %>
