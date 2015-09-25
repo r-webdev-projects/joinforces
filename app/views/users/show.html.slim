@@ -7,7 +7,7 @@ main.users
         span.username = @user.username
         span.firstname = @user.first_name
         span.location = @user.location.present? ? @user.location : "Add Location"
-        - if user_signed_in?
+        - if user_signed_in? && @user == current_user
           = link_to "Settings", edit_user_path(@user)
 
     - if @user.ideas.any?
