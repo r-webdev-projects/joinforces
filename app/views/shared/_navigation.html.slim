@@ -21,6 +21,7 @@ header.global
           
       - if user_signed_in?
         li.navigation-item = link_to "Logout", destroy_user_session_path, method: :delete, class: 'button'
+        li.navigation-item = link_to "Profile", current_user, class: 'button'
       - else
         li.navigation-item = link_to "Register", new_user_registration_path, class: 'button'
         li.navigation-item = link_to "Sign in", new_user_session_path, class: 'button'
