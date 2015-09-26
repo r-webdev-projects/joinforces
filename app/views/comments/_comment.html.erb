@@ -1,0 +1,5 @@
+<li id="comment-<%= comment.id %>">
+	<%= image_tag(comment.user.gravatar_url('50')) %>
+	<%= link_to comment.user.first_name, comment.user %>
+	<%= comment.body %>
+</li>
