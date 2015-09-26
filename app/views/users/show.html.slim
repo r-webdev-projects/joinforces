@@ -16,7 +16,7 @@ main.users
         - for idea in @user.ideas
           = link_to idea.title, idea_path(idea)
   
-  section.activity-stream
-    - if @user.comments.any?
-      h3 RECENT COMMENTS
-      = render @comments
+    section.comments
+      - if @user.comments.any?
+        h3 RECENT COMMENTS
+        = render @comments
