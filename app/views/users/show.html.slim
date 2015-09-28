@@ -1,22 +1,40 @@
-main.users
+<section class="user-container">
 
-  aside
-    section.profile
-      section.avatar.large
+<!--All tab links go here-->
+
+  <section class="tab-links">
+    <ul class="user-tab-links">
+      <li><a href="#tab1">Summary</a></li>
+      <li><a href="#tab2">Edit Info</a></li>
+    </ul>
+  </section>
+
+<!--Content for each tab goes here-->
+  <section class="tab-content">
+
+    <section class="profile">
+      <section class="avatar large">
         = image_tag @user.gravatar_url('200')
-        span.username = @user.username
-        span.firstname = @user.first_name
-        span.location = @user.location.present? ? @user.location : "Add Location"
-        - if user_signed_in? && @user == current_user
-          = link_to "Settings", edit_user_path(@user)
+        <span class="username">
+        fishmooney
+        </span>
+        <span class="location">
+        Gotham City
+        </span>
+        <span>
+          <a href="#">Settings</a>
+        </span>
+      </section>
+    </section>
 
-    - if @user.ideas.any?
-      section.ideas
-        h3 PROPOSED PROJECTS
-        - for idea in @user.ideas
-          = link_to idea.title, idea_path(idea)
-  
-    section.comments
-      - if @user.comments.any?
-        h3 RECENT COMMENTS
-        = render @comments
+    <section>
+    <h3>Proposed Projects</h3>
+    </section>
+
+    <section>
+      <h3>Recent Comments</h3>
+    </section>
+
+  </section>
+
+</section>

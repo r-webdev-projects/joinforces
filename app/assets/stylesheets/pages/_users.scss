@@ -1,19 +1,15 @@
-main.users {
+.user-container {
+  @include center(1200px);
+  @include edit();
   @include cf();
-  width: 100%;
-  max-width: 1200px;
-  padding: 30px 0;
-  margin: 0 auto;
+}
 
-  aside {
-    @include column(3/10);
-  }
+.tab-links {
+  @include span(1/4);
+}
 
-  h3 {
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 1.3px;
-  }
+.tab-content {
+  @include span(3/4);
 }
 
 section.profile {
@@ -51,4 +47,3 @@ section.profile {
     }
   }
 }
-
