@@ -16,7 +16,10 @@
 config/database.yml
 .env
 
-# Ignore local environment variables
+# Ignore vagrant files, local env variables
 /config/local_env.yml
 /Cheffile
 /Vagrantfile
+.vagrant/
+Cheffile.lock
+cookbooks/
