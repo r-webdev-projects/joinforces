@@ -1,40 +1,43 @@
-<section class="user-container">
-
-<!--All tab links go here-->
-
-  <section class="tab-links">
-    <ul class="user-tab-links">
-      <li><a href="#tab1">Summary</a></li>
-      <li><a href="#tab2">Edit Info</a></li>
-    </ul>
+<section class="main-profile top">
+<!--User Avatar-->
+  <section class="main-profile-avatar">
+    = image_tag @user.gravatar_url('200')
   </section>
 
-<!--Content for each tab goes here-->
-  <section class="tab-content">
-
-    <section class="profile">
-      <section class="avatar large">
-        = image_tag @user.gravatar_url('200')
-        <span class="username">
-        fishmooney
-        </span>
-        <span class="location">
-        Gotham City
-        </span>
-        <span>
-          <a href="#">Settings</a>
-        </span>
-      </section>
-    </section>
-
-    <section>
-    <h3>Proposed Projects</h3>
-    </section>
-
-    <section>
-      <h3>Recent Comments</h3>
-    </section>
-
+<!--User Summary-->
+  <section class="main-profile-summary">
+  <!--User username goes here-->
+    h3 = @user.username
+    <div class="profile-social-icons">
+      <a href=""><span class="icon-github"></span></a>
+      <a href=""><span class="icon-twitter"></span></a>
+    </div>
+    <button class="user-edit">Edit Profile</button>
+    <!--User Interests/Skills go here-->
+    <p>Gang Leader</p>
+    <!--User Location goes here-->
+    p = @user.location.present? ? @user.location : "Add Location"
+    <!--User (Brief?) Bio goes here-->
+    <p>"Timothy, Do you know this fellow used to have your job? Carried my umbrella and thought it an honor. Now look at him. Has a seat at the table."
+    </p>
   </section>
+</section>
 
+<section class="main-profile bottom">
+<!--CONNECT COMMENTS FROM DATABASE HERE-->
+  <section class="user-recent-comments">
+    - if @user.comments.any?
+        h3 Recent Comments
+        = render @comments
+  </section>
+<!--CONNECT PROJECTS FROM DATABASE HERE-->
+  <section class="user-projects">
+    <h3>My Projects</h3>
+    <div>
+    = image_tag @user.gravatar_url('200')
+    = image_tag @user.gravatar_url('200')
+    = image_tag @user.gravatar_url('200')
+    = image_tag @user.gravatar_url('200')
+    </div>
+  </section>
 </section>

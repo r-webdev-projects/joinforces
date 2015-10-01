@@ -1,49 +1,71 @@
-.user-container {
-  @include center(1200px);
-  @include edit();
+.main-profile {
+  @include center(1000px);
+  //@include edit();
   @include cf();
+  margin-top: 20px;
+
 }
 
-.tab-links {
+.main-profile-avatar {
   @include span(1/4);
 }
 
-.tab-content {
+.main-profile-summary {
   @include span(3/4);
-}
 
-section.profile {
-  @include cf();
-  border: 1px solid $clouds;
-  border-radius: 2px;
-  text-align: center;
-  padding: 30px;
+  h3 {
+    display: inline;
+    margin: 0 0 20px;
+  }
 
-  .avatar {
-    width: 100%;
-    display: block;
-
-    img {
-      margin: 0 auto 30px auto;
-      display: block;
-    }
-
-    span {
-      display: block;
-
-      &.username {
-        font-weight: 600;
-        font-size: 24px;
-        color: black;
-        letter-spacing: .5px;
-      }
-      &.location {
-        font-size: 12px;
-        font-weight: 300;
-        color: #888;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-      }
-    }
+  p {
+    color: $dark-gray;
+    margin: 10px 0;
   }
 }
+
+.profile-social-icons {
+  display: inline;
+  margin-left: 10px;
+
+  span {
+    font-size: 1.5em;
+    margin-left: 10px;
+  }
+}
+
+.user-edit {
+  float: right;
+}
+
+.user-recent-comments {
+  @include col(1/2);
+  border: 1px solid $gray;
+  box-shadow: 1.5px 1.5px 1.5px $black;
+  padding: 20px;
+
+  h3 {
+    margin: 0;
+  }
+}
+
+.user-projects {
+  @include col(1/2);
+  border: 1px solid $gray;
+  box-shadow: 1.5px 1.5px 1.5px $black;
+  padding: 20px;
+
+  h3 {
+    margin: 0;
+  }
+}
+
+.top {
+  box-shadow: 1.5px 1.5px 1.5px $black;
+}
+
+.bottom {
+  margin-bottom: 20px;
+}
+
+
