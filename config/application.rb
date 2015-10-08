@@ -20,13 +20,6 @@ module Collabor8
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
-    config.before_configuration do
-      env_file = File.join(Rails.root, 'config', 'local_env.yml')
-      YAML.load(File.open(env_file)).each do |key, value|
-        ENV[key.to_s] = value
-      end if File.exists?(env_file)
-    end
-
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 
@@ -35,8 +28,6 @@ module Collabor8
     # To use Postmark (postmarkapp.com) for mailing
     config.action_mailer.delivery_method = :postmark
     config.action_mailer.postmark_settings = { :api_token => ENV['POSTMARK_API_KEY'] }
-
-
 
 
   end

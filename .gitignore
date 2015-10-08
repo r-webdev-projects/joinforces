@@ -16,10 +16,15 @@
 config/database.yml
 .env
 
-# Ignore vagrant files, local env variables
+# Ignore local env vars
 /config/local_env.yml
+
+# Ignore vagrant files
+/.vagrant
 /Cheffile
+/Cheffile.lock
 /Vagrantfile
-.vagrant/
-Cheffile.lock
-cookbooks/
+/cookbooks/
+
+# Ignore extra repo created by Pipelines
+/joinforces-dev/
