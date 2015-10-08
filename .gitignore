@@ -14,7 +14,7 @@
 
 # Ignore config/database.yml
 config/database.yml
-.env
 
 # Ignore local environment variables
 /config/local_env.yml
+.env
