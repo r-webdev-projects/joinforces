@@ -1,5 +1,5 @@
-source 'https://rubygems.org'
-ruby '2.2.0'
+source 'http://rubygems.org' # https was preventing bundle from finishing
+ruby ENV['JF_RUBY_VERSION'] || '2.2.1'
 
 gem 'rails', '4.2.1'
 gem 'pg'
