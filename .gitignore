@@ -29,4 +29,3 @@ config/database.yml
 
 # Ignore extra repo created by Pipelines
 /joinforces-dev/
->>>>>>> master
