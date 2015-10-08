@@ -1,14 +1,11 @@
 main.users
-
+  
   aside
     section.profile
       section.avatar.large
         = image_tag @user.gravatar_url('200')
         span.username = @user.username
-        span.firstname = @user.first_name
         span.location = @user.location.present? ? @user.location : "Add Location"
-        - if user_signed_in? && @user == current_user
-          = link_to "Settings", edit_user_path(@user)
 
     - if @user.ideas.any?
       section.ideas
@@ -16,7 +13,4 @@ main.users
         - for idea in @user.ideas
           = link_to idea.title, idea_path(idea)
   
-    section.comments
-      - if @user.comments.any?
-        h3 RECENT COMMENTS
-        = render @comments
+  section.activity-stream
