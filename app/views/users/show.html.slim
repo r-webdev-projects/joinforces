@@ -1,10 +1,10 @@
 <section class="main-profile top">
 <!--User Avatar-->
   <section class="main-profile-avatar">
-    = image_tag @user.gravatar_url('200')
+    = image_tag @user.gravatar_url('150')
   </section>
 
-<!--User Summary-->
+<!--USER PERSONAL INFO-->
   <section class="main-profile-summary">
   <!--User username goes here-->
     h3 = @user.username
@@ -14,30 +14,27 @@
     </div>
     <button class="user-edit">Edit Profile</button>
     <!--User Interests/Skills go here-->
-    <p>Gang Leader</p>
+    <p>ADD INTERESTS/SKILLS</p>
     <!--User Location goes here-->
     p = @user.location.present? ? @user.location : "Add Location"
     <!--User (Brief?) Bio goes here-->
-    <p>"Timothy, Do you know this fellow used to have your job? Carried my umbrella and thought it an honor. Now look at him. Has a seat at the table."
-    </p>
+    p = @user.short_bio.present? ? @user.short_bio : "Add Brief Bio"
   </section>
 </section>
 
 <section class="main-profile bottom">
 <!--CONNECT COMMENTS FROM DATABASE HERE-->
   <section class="user-recent-comments">
-    - if @user.comments.any?
-        h3 Recent Comments
-        = render @comments
+    <h3>Recent Comments</h3>
+  <!--User comments go here-->
   </section>
+
 <!--CONNECT PROJECTS FROM DATABASE HERE-->
   <section class="user-projects">
-    <h3>My Projects</h3>
-    <div>
-    = image_tag "https://unsplash.it/200/?random"
-    = image_tag "https://unsplash.it/200/?random"
-    = image_tag "https://unsplash.it/200/?random"
-    = image_tag "https://unsplash.it/200/?random"
+    <div class="user-project">
+      <h3>My Projects</h3>
+      <!--User Projects go here-->
+
     </div>
   </section>
 </section>
