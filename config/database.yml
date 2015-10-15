@@ -1,0 +1,26 @@
+# PostgreSQL. Versions 8.2 and up are supported.
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: <%= ENV['USERNAME'] %>
+  password: <%= ENV['PASSWORD'] %>
+  host:     <%= ENV['IP'] %>
+
+development:
+  adapter: postgresql
+  database: collabor8_development
+  encoding: UTF8
+  pool: 5
+  timeout: 5000
+
+test:
+  <<: *default
+  database: collabor8_test
+
+production:
+  <<: *default
+  database: collabor8_production
+  username: collabor8
+  password: <%= ENV['COLLABOR8_DATABASE_PASSWORD'] %>

@@ -22,6 +22,7 @@
   </section>
 </section>
 
+<<<<<<< HEAD
 <section class="main-profile bottom">
 <!--CONNECT COMMENTS FROM DATABASE HERE-->
   <section class="user-recent-comments">
@@ -38,3 +39,15 @@
     </div>
   </section>
 </section>
+=======
+    - if @user.ideas.any?
+      section.ideas
+        h3 PROPOSED PROJECTS
+        - for idea in @user.ideas
+          = link_to idea.title, idea_path(idea)
+  
+  section.activity-stream
+    - if @user.comments.any?
+      h3 RECENT COMMENTS
+      / li = render @comments
+>>>>>>> josh/profilesOld

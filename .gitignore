@@ -25,6 +25,3 @@ config/database.yml
 /Cheffile.lock
 /Vagrantfile
 /cookbooks/
-
-# Ignore extra repo created by Pipelines
-/joinforces-dev/
