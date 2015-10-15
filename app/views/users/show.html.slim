@@ -1,45 +1,15 @@
-<section class="main-profile top">
-<!--User Avatar-->
-  <section class="main-profile-avatar">
-    = image_tag @user.gravatar_url('150')
-  </section>
+main.users
 
-<!--USER PERSONAL INFO-->
-  <section class="main-profile-summary">
-  <!--User username goes here-->
-    h3 = @user.username
-    <div class="profile-social-icons">
-      <a href=""><span class="icon-github"></span></a>
-      <a href=""><span class="icon-twitter"></span></a>
-    </div>
-    <button class="user-edit">Edit Profile</button>
-    <!--User Interests/Skills go here-->
-    <p>ADD INTERESTS/SKILLS</p>
-    <!--User Location goes here-->
-    p = @user.location.present? ? @user.location : "Add Location"
-    <!--User (Brief?) Bio goes here-->
-    p = @user.short_bio.present? ? @user.short_bio : "Add Brief Bio"
-  </section>
-</section>
+  aside
+    section.profile
+      section.avatar.large
+        = image_tag @user.gravatar_url('200')
+        span.username = @user.username
+        span.firstname = @user.first_name
+        span.location = @user.location.present? ? @user.location : "Add Location"
+        - if user_signed_in? && @user == current_user
+          = link_to "Settings", edit_user_path(@user)
 
-<<<<<<< HEAD
-<section class="main-profile bottom">
-<!--CONNECT COMMENTS FROM DATABASE HERE-->
-  <section class="user-recent-comments">
-    <h3>Recent Comments</h3>
-  <!--User comments go here-->
-  </section>
-
-<!--CONNECT PROJECTS FROM DATABASE HERE-->
-  <section class="user-projects">
-    <div class="user-project">
-      <h3>My Projects</h3>
-      <!--User Projects go here-->
-
-    </div>
-  </section>
-</section>
-=======
     - if @user.ideas.any?
       section.ideas
         h3 PROPOSED PROJECTS
@@ -50,4 +20,3 @@
     - if @user.comments.any?
       h3 RECENT COMMENTS
       / li = render @comments
->>>>>>> josh/profilesOld
