@@ -13,6 +13,7 @@ class CommentsController < ApplicationController
   def create
     @comment = @commentable.comments.new(comment_params)
     @comment.user = current_user
+
     if @comment.save
       redirect_to [@commentable], notice: "Comment created."
     else
@@ -55,7 +56,7 @@ private
   end
 
   def comment_params
-    params.require(:comment).permit(:body, :idea_id, :commentable_id)
+    params.require(:comment).permit(:body, :idea_id, :commentable_id, :parent_id)
   end
 
 end

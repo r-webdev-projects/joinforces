@@ -1,23 +1,36 @@
 - @comments.each do |comment|
-  .comment
-    .comment__timeline
-      .avatar = image_tag comment.user.try(:gravatar_url)
-    .comment__content
-      .comment__author
-        .name = comment.user.try(:username)
-      .comment__posted_on 
-        = time_ago_in_words(comment.created_at)
-        |  ago
-      .comment__message = markdown(comment.body)
-      .comment__actions
-        - if user_signed_in? && current_user.voted_for?(comment)
-          = link_to break_up_idea_comment_path(@idea, comment), method: :break_up, class: 'heart' do
-            = inline_svg "heart.svg", class: 'filled'
-        - else
-          = link_to heart_idea_comment_path(@idea, comment), method: :heart, class: 'heart' do
-            = inline_svg "heart.svg"
-        span.divider
-        = link_to "Reply"
-        - if comment_by_current_user?(comment)
-          span.divider
-          = link_to 'Delete Comment', idea_comment_path(@idea, comment), :method => :delete
+  - comment.self_and_descendants.each do |c|
+    .comment
+      .comment__timeline
+        .avatar = image_tag c.user.try(:gravatar_url)
+
+      .comment__content
+        .comment__author
+          .name = c.user.try(:username)
+
+        .comment__posted_on
+          = time_ago_in_words(c.created_at)
+          |  ago
+
+        .comment__message
+          = markdown(c.body)
+
+        .comment__actions
+          - if user_signed_in? && current_user.voted_for?(c)
+            = link_to break_up_idea_comment_path(@idea, c), method: :break_up, class: 'heart' do
+              = inline_svg "heart.svg", class: 'filled'
+          - else
+            = link_to heart_idea_comment_path(@idea, c), method: :heart, class: 'heart' do
+              = inline_svg "heart.svg"
+
+          - if user_signed_in? && !comment_by_current_user?(c)
+            span.divider
+            = link_to "Reply"
+
+          - if comment_by_current_user?(c)
+            span.divider
+            = link_to 'Delete Comment', idea_comment_path(@idea, c), :method => :delete
+
+      - if user_signed_in? && !comment_by_current_user?(c)
+        .comment__reply
+          = render 'comments/form', parent_id: c.id

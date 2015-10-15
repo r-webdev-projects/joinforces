@@ -2,4 +2,6 @@
 	<span class="comment comment__content comment__author"><%= link_to comment.user.first_name, comment.user %></span>
 	<span class="comment content"><%= comment.body %></span>
 	<span class="comment timesamp">Posted <%= time_ago_in_words(comment.created_at) %> ago.</span>
+
+  <%= comment.hash_tree %>
 </li>

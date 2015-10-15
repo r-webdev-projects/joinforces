@@ -10,7 +10,7 @@ class IdeasController < ApplicationController
   # GET /ideas/1
   def show
     @commentable = @idea
-    @comments = @commentable.comments
+    @comments = @commentable.comments.where(parent_id: nil)
     @comment = Comment.new
   end
 
