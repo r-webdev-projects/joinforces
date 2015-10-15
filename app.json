@@ -18,5 +18,5 @@
     "POSTMARK_SMTP_SERVER": "smtp.postmarkapp.com",
     "SECRET_KEY_BASE": "bb3cf813f91cac74f6985bdb8000d93811e68fdce1a802907178b9ba4b8ee79e985fe00ea73f400bbd317a4a6be532f0de36196c8b8daf4ba307206a557abf91"
   },
-  "addons": ["heroku-postgresql:hobby-dev", "papertrail:choklad", "mailtrap:free", "deployhooks:http"]
+  "addons": ["heroku-postgresql:hobby-dev", "papertrail:choklad", "mailtrap:free", "deployhooks:http", "postmark:10k"]
 }
