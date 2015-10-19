@@ -1,23 +1,31 @@
-main.users
+section.main-profile.top
+  / User Avatar
+  section.main-profile-avatar
+    = image_tag @user.gravatar_url('150')
 
-  aside
-    section.profile
-      section.avatar.large
-        = image_tag @user.gravatar_url('200')
-        span.username = @user.username
-        span.firstname = @user.first_name
-        span.location = @user.location.present? ? @user.location : "Add Location"
-        - if user_signed_in? && @user == current_user
-          = link_to "Settings", edit_user_path(@user)
+  / User Personal Info
+  section.main-profile-summary
+    / Username
+    h3 = @user.username
+    div.profile-social-icons
+      a
+        span.icon-github
+      a
+        span.icon-twitter
+    a.user-edit = link_to "Edit Profile", edit_user_path(@user)
+    / User interests/skills
+    p = "ADD INTERESTS/SKILLS" 
+    / User location
+    p = @user.location.present? ? @user.location : "ADD LOCATION"
+    / User brief bio
+    p = @user.short_bio.present? ? @user.short_bio : "ADD BRIEF BIO"
 
-    - if @user.ideas.any?
-      section.ideas
-        h3 PROPOSED PROJECTS
-        - for idea in @user.ideas
-          = link_to idea.title, idea_path(idea)
-  
-  section.activity-stream
-    - if @user.comments.any?
-      h3 RECENT COMMENTS
-      li = render @comments
-      / test
+section.main-profile.bottom
+  section.user-recent-comments
+    h3 = 'Recent Comments'
+    / user comments go here
+
+  section.user-projects
+    div.user-project
+      h3 = 'My Projects'
+      / user projects go here
