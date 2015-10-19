@@ -12,23 +12,24 @@ section.main-profile.top
         span.icon-github
       a
         span.icon-twitter
-    a.user-edit.button = link_to "Edit Profile", edit_user_path(@user)
+    = link_to 'Edit Profile', edit_user_path(@user), class: 'button user-edit'
     / User interests/skills
-    p = "ADD INTERESTS/SKILLS" 
+    p = 'ADD INTERESTS/SKILLS' 
     / User location
-    p = @user.location.present? ? @user.location : "ADD LOCATION"
+    p = @user.location.present? ? 'Location: ' + @user.location : 'ADD LOCATION'
     / User brief bio
-    p = @user.short_bio.present? ? @user.short_bio : "ADD BRIEF BIO"
+    p = @user.short_bio.present? ? @user.short_bio : 'ADD BRIEF BIO'
 
 section.main-profile.bottom
   section.user-recent-comments
     h3 = 'Recent Comments'
-    / user comments go here
-    li = render @comments
+    / user comments
+    - for comment in @user.comments
+      li = render @comments
 
   section.user-projects
     div.user-project
       h3 = 'My Projects'
-      / user projects go here
+      / user projects
       - for idea in @user.ideas
         = link_to idea.title, idea_path(idea)
