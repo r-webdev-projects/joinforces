@@ -1,37 +1,38 @@
-section.main-profile.top
-  / User Avatar
-  section.main-profile-avatar
-    = image_tag @user.gravatar_url('150')
+.userPage
+  section.main-profile.top
+    / User Avatar
+    section.main-profile-avatar
+      = image_tag @user.gravatar_url('150')
 
-  / User Personal Info
-  section.main-profile-summary
-    / Username
-    h3 = @user.username
-    div.profile-social-icons
-      a
-        span.icon-github
-      a
-        span.icon-twitter
-    = link_to 'Edit Profile', edit_user_path(@user), class: 'button user-edit'
-    / User interests/skills
-    p = 'ADD INTERESTS/SKILLS' 
-    / User location
-    p = @user.location.present? ? 'Location: ' + @user.location : 'ADD LOCATION'
-    / User brief bio
-    p = @user.short_bio.present? ? @user.short_bio : 'ADD BRIEF BIO'
+    / User Personal Info
+    section.main-profile-summary
+      / Username
+      h3 = @user.username
+      div.profile-social-icons
+        a
+          span.icon-github
+        a
+          span.icon-twitter
+      = link_to 'Edit Profile', edit_user_path(@user), class: 'button user-edit'
+      / User interests/skills
+      p = 'ADD INTERESTS/SKILLS' 
+      / User location
+      p = @user.location.present? ? 'Location: ' + @user.location : 'ADD LOCATION'
+      / User brief bio
+      p = @user.short_bio.present? ? @user.short_bio : 'ADD BRIEF BIO'
 
-section.main-profile.bottom
-  section.user-recent-comments
-    h3 = 'Recent Comments'
-    / user comments
-    ul
-      .recent-comments
-        = render @comments
-
-  section.user-projects
-    div.user-project
-      h3 = 'My Projects'
-      / user projects
+  section.main-profile.bottom
+    section.user-recent-comments
+      h3 = 'Recent Comments'
+      / user comments
       ul
-        - for idea in @user.ideas
-          li = link_to idea.title, idea_path(idea)
+        .recent-comments
+          = render @comments
+
+    section.user-projects
+      div.user-project
+        h3 = 'My Projects'
+        / user projects
+        ul
+          - for idea in @user.ideas
+            li = link_to idea.title, idea_path(idea)

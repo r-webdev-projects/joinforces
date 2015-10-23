@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   before_action :correct_user, only: [:edit, :update]
 
   def show
+    @user_page = true
     @user = User.find(params[:id])
     @comments = @user.comments
   end
