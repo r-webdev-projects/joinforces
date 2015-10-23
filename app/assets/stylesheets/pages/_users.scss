@@ -6,10 +6,6 @@
 
 }
 
-.comments .comment::before {
-  display: none;
-}
-
 .main-profile-avatar {
   @include span(1/4);
 }
