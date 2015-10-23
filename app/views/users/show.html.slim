@@ -24,12 +24,14 @@ section.main-profile.bottom
   section.user-recent-comments
     h3 = 'Recent Comments'
     / user comments
-    .recent-comments
-      = render @comments
+    ul
+      .recent-comments
+        = render @comments
 
   section.user-projects
     div.user-project
       h3 = 'My Projects'
       / user projects
-      - for idea in @user.ideas
-        = link_to idea.title, idea_path(idea)
+      ul
+        - for idea in @user.ideas
+          li = link_to idea.title, idea_path(idea)
