@@ -15,3 +15,4 @@
 
 //= require components/signup
 //= require components/login
+//= require components/comments

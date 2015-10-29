@@ -17,4 +17,6 @@
         | Accepts
         = link_to 'Markdown', "https://daringfireball.net/projects/markdown/", target: '_blank'
       .comment__actions.right
+        - if defined? parent_id
+          = f.button 'Cancel', class: 'button cancel-reply', data: { parent_comment: parent_id }
         = f.button 'Comment', class: 'button'

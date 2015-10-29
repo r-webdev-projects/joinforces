@@ -25,12 +25,12 @@
 
           - if user_signed_in? && !comment_by_current_user?(c)
             span.divider
-            = link_to "Reply"
+            = link_to "Reply", "#", class: 'reply-to-comment', data: { comment: c.id }
 
           - if comment_by_current_user?(c)
             span.divider
             = link_to 'Delete Comment', idea_comment_path(@idea, c), :method => :delete
 
       - if user_signed_in? && !comment_by_current_user?(c)
-        .comment__reply
+        .comment__reply data-parent-comment="#{c.id}"
           = render 'comments/form', parent_id: c.id
