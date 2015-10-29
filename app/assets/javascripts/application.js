@@ -15,6 +15,3 @@
 
 //= require components/signup
 //= require components/login
-
-//= require console.image.min
-//= require secrets/console
