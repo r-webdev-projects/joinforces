@@ -1,5 +1,35 @@
 main.idea
-  .idea-details
+  aside.idea__detail-sidebar
+    .idea__detail-core-team
+      h3 Core Team
+
+      .team-member
+        .avatar.square
+          = link_to user_path(@idea.user) do
+            = image_tag @idea.user.gravatar_url, alt: "#{@idea.user.username} profile picture"
+        span.name
+          - if @idea.user.first_name.present? || @idea.user.last_name.present?
+            = "#{@idea.user.first_name} #{@idea.user.first_name} (@#{@idea.user.username})"
+          - else
+            = "@#{@idea.user.username}"
+
+        span.location = @idea.user.location
+        span.bio = @idea.user.short_bio
+
+      hr
+
+      h4
+        b Submitted
+        span = @idea.created_at.to_date.to_formatted_s(:long)
+
+      h4
+        b Supporters
+        span = @idea.votes_for.size
+
+      - if @idea.user == current_user
+        = link_to "Delete idea", idea_path(@idea), method: 'delete'
+
+  section.idea-details
     h1 = @idea.title
     .idea-details__description = markdown(@idea.description)
 
@@ -10,11 +40,6 @@ main.idea
       - else
         .user-not-signed-in
           = link_to "Sign in", new_user_session_path
-          |  or 
+          |  or
           = link_to "Register", new_user_registration_path
           |  to comment
-
-    
-  aside.idea__detail-sidebar
-    - if @idea.user == current_user
-      = link_to "Delete idea", idea_path(@idea), method: 'delete'
