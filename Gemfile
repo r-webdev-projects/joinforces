@@ -37,6 +37,8 @@ group :development, :test do
 
   # for testing
   gem 'rspec-rails'
+  gem 'faker'
+
 end
 
 group :test do
