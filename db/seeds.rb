@@ -23,3 +23,12 @@
 							 password: password,
 							 password_confirmation: password)
 end
+
+50.times do |n|
+	title = Faker::Hacker.ingverb
+	description = Faker::Hacker.say_something_smart
+	user_id = n+1
+	Idea.create!(title: title,
+							 description: description,
+							 user_id: user_id)
+end
