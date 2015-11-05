@@ -1,40 +1,41 @@
 header.page
   section.content
-    h1 
+    h1
       | Find a product you'd like to work on or
       br
       = link_to "start your own", new_idea_path
-      |  that others can work on with you.  
+      |  that others can work on with you.
 
 main.ideas
   .ideas__listing
-    - @ideas.each do |idea|
-      .ideas__listing-item
-        .ideas__listing-image
-          = image_tag "https://unsplash.it/400/?random"
-        .ideas__listing-details
-          .avatar.square
-            = link_to user_path(idea.user) do
-              =  image_tag idea.user.gravatar_url, alt: "#{idea.user.username} profile picture"
-          = link_to idea.title, idea_path(idea), class: 'ideas__listing-title'
-          p.ideas__listing-description = idea.description
-        .ideas__status
-          .stat
-            = link_to "", idea_path(idea, anchor: 'comments'), class: 'link'
-            .icon = inline_svg 'talk.svg'
-            .value = idea.comments.count
-            .label = "comment".pluralize(idea.comments.count)
+    - if @ideas.size > 0
+      - @ideas.each do |idea|
+        .ideas__listing-item
+          .ideas__listing-image
+            = image_tag "https://unsplash.it/400/?random"
+          .ideas__listing-details
+            .avatar.square
+              = link_to user_path(idea.user) do
+                =  image_tag idea.user.gravatar_url, alt: "#{idea.user.username} profile picture"
+            = link_to idea.title, idea_path(idea), class: 'ideas__listing-title'
+            p.ideas__listing-description = idea.description
+          .ideas__status
+            .stat
+              = link_to "", idea_path(idea, anchor: 'comments'), class: 'link'
+              .icon = inline_svg 'talk.svg'
+              .value = idea.comments.count
+              .label = "comment".pluralize(idea.comments.count)
 
-          .stat
-            .icon
-              = inline_svg 'user.svg'
-            .value = idea.votes_for.size
-            .label = "supporter".pluralize(idea.votes_for.size)
+            .stat
+              .icon
+                = inline_svg 'user.svg'
+              .value = idea.votes_for.size
+              .label = "supporter".pluralize(idea.votes_for.size)
 
-          .stat
-            .icon
-              = inline_svg 'pen.svg'
-            .value
-              | 30
-            .label
-              | pens
+            .stat
+              .icon
+                = inline_svg 'pen.svg'
+              .value
+                | 30
+              .label
+                | pens
