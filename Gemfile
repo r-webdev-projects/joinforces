@@ -28,6 +28,9 @@ gem 'redcarpet'
 # For mailing
 gem 'postmark-rails'
 
+# For pagination
+gem 'will_paginate', '~> 3.0.6'
+
 group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
