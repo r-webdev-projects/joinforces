@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe UsersController do 
+describe UsersController do
 
 	# minimal set of attributes to create a valid user
 	let(:valid_attributes) { {
