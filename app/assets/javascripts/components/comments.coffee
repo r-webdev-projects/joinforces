@@ -12,3 +12,10 @@ jQuery ->
     target = $('div[data-parent-comment="' + parentComment + '"]')
 
     target.slideUp()
+
+  $(".new_comment").on 'ajax:success', (e, data, status, xhr) ->
+    # console.log data[0]
+    # TODO: show comments inline after successful submission
+    comment = data[0]
+    console.log 'comment submitted successfully'
+

@@ -15,7 +15,8 @@ class CommentsController < ApplicationController
     @comment.user = current_user
 
     if @comment.save
-      redirect_to [@commentable], notice: "Comment created."
+      response = [@commentable.comments.where(user_id: current_user.id).last]
+      render json: response, notice: "Comment created."
     else
       render :new
     end
