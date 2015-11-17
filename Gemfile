@@ -14,6 +14,8 @@ gem 'slim'
 gem 'inline_svg'
 gem "autoprefixer-rails"
 
+gem 'underscore-rails'
+
 # For friendlier URLs
 gem 'friendly_id'
 
