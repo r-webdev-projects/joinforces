@@ -1,6 +1,6 @@
 # this is a comment Josh is using to test Heroku Pipelines
 class IdeasController < ApplicationController
-  before_action :set_idea, only: [:show, :edit, :update, :destroy, :kickoff]
+  before_action :set_idea, except: [:index, :new, :create]
   before_action :authenticate_user!, except: [:index, :show]
 
   # GET /ideas
@@ -13,6 +13,7 @@ class IdeasController < ApplicationController
     @commentable = @idea
     @comments = @commentable.comments
     @comment = Comment.new
+    @user = current_user
   end
 
   # GET /ideas/new
@@ -49,6 +50,20 @@ class IdeasController < ApplicationController
   def destroy
     @idea.destroy
     redirect_to ideas_url, notice: 'Idea was successfully destroyed.'
+  end
+
+  def upvote
+    @user = current_user
+    @idea.liked_by @user
+
+    redirect_to @idea
+  end
+
+  def downvote
+    @user = current_user
+    @idea.downvote_from @user
+
+    redirect_to @idea
   end
 
   def kickoff
