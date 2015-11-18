@@ -58,9 +58,14 @@ class IdeasController < ApplicationController
 
     # Check to see if the user is idea owner
     if @idea.user == current_user
-      render :kickoff
+      # If there are already comments, redirect to show page with notice
+      if @comments.size < 1
+        render :kickoff
+      else
+        redirect_to @idea, notice: 'People are already talking about your project. Contribute below.'
+      end
     else
-      redirect_to permission_denied_path
+      redirect_to permission_denied_path, notice: 'You are not authorized to view this page.'
     end
   end
 
