@@ -52,6 +52,16 @@ class IdeasController < ApplicationController
   end
 
   def kickoff
+    @commentable = @idea
+    @comments = @commentable.comments
+    @comment = Comment.new
+
+    # Check to see if the user is idea owner
+    if @idea.user == current_user
+      render :kickoff
+    else
+      redirect_to permission_denied_path
+    end
   end
 
   private

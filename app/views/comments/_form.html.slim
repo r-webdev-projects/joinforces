@@ -11,8 +11,14 @@
       .avatar = image_tag current_user.gravatar_url
     .comment__content
       .comment__message
-        = f.text_area :body, rows: 8, placeholder: 'Leave your comments'
-        | Accepts 
+        - if defined? kickoff
+          = f.text_area :body, rows: 8, placeholder: 'Kickstart this thing'
+        - else
+          = f.text_area :body, rows: 8, placeholder: 'Leave your comments'
+        | Accepts&nbsp;
         = link_to 'Markdown', "https://daringfireball.net/projects/markdown/", target: '_blank'
       .comment__actions.right
-        = f.button 'Comment', class: 'button'
+        - if defined? kickoff
+          = f.button 'Let\'s get started', class: 'button'
+        - else
+          = f.button 'Comment', class: 'button'
