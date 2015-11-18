@@ -2,7 +2,6 @@ class User < ActiveRecord::Base
   has_many :ideas
   has_many :comments, dependent: :destroy
 
-  # user must have a unique username
   validates :username, :presence => true,
                        :uniqueness => { :case_sensitive => false }
 

@@ -27,14 +27,17 @@
       <%= yield :head %>
 
   </head>
-  <body>
+  <body class='blank'>
     <!-- This comment is here to test the Pipeline functionality. -->
     <div class="container">
-      <%= render 'shared/navigation' %>
+
+      <% if flash[:notice] %>
+        <div class="notice"><%= flash[:notice] %></div>
+      <% end %>
+
 
       <%= yield %>
 
-      <%= render 'shared/footer' %>
     </div>
   </body>
 </html>

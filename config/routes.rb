@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
   # For user authentication
   devise_for :users #, :controllers => { registrations: 'registrations' }
-  resources :users#, only: [:show]
+  resources :users, only: [:show]
 
   # Static Pages
   match '/about' => 'static_pages#about', via: 'get'
   match '/contact' => 'static_pages#contact', via: 'get'
   match '/signup' => 'static_pages#signup', via: 'get'
   match '/login' => 'static_pages#login', via: 'get'
+  match '/no' => 'static_pages#permission_denied', via: 'get', as: 'permission_denied'
 
   # Ideas
   resources :ideas do
@@ -15,13 +16,10 @@ Rails.application.routes.draw do
       post 'heart', on: :member
       post 'break_up', on: :member
     end
-    resources :support
     get '/kickoff' => 'ideas#kickoff', as: :kickoff
+    get '/upvote' => 'ideas#upvote', as: :upvote
+    get '/downvote' => 'ideas#downvote', as: :downvote
   end
-
-  # Users
-  resources :users
-
 
   # Root (homepage)
   root 'ideas#index'

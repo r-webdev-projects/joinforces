@@ -3,3 +3,13 @@ main {
   max-width: $max-width;
   margin: 0 auto;
 }
+
+body.blank {
+  text-align: center;
+  background: $white;
+
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+}

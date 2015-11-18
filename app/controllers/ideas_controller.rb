@@ -1,5 +1,6 @@
+# this is a comment Josh is using to test Heroku Pipelines
 class IdeasController < ApplicationController
-  before_action :set_idea, only: [:show, :edit, :update, :destroy, :kickoff]
+  before_action :set_idea, except: [:index, :new, :create]
   before_action :authenticate_user!, except: [:index, :show]
 
   # GET /ideas
@@ -12,6 +13,7 @@ class IdeasController < ApplicationController
     @commentable = @idea
     @comments = @commentable.comments.where(parent_id: nil)
     @comment = Comment.new
+    @user = current_user
   end
 
   # GET /ideas/new
@@ -50,7 +52,36 @@ class IdeasController < ApplicationController
     redirect_to ideas_url, notice: 'Idea was successfully destroyed.'
   end
 
+  def upvote
+    @user = current_user
+    @idea.liked_by @user
+
+    redirect_to @idea
+  end
+
+  def downvote
+    @user = current_user
+    @idea.downvote_from @user
+
+    redirect_to @idea
+  end
+
   def kickoff
+    @commentable = @idea
+    @comments = @commentable.comments
+    @comment = Comment.new
+
+    # Check to see if the user is idea owner
+    if @idea.user == current_user
+      # If there are already comments, redirect to show page with notice
+      if @comments.size < 1
+        render :kickoff
+      else
+        redirect_to @idea, notice: 'People are already talking about your project. Contribute below.'
+      end
+    else
+      redirect_to permission_denied_path, notice: 'You are not authorized to view this page.'
+    end
   end
 
   private

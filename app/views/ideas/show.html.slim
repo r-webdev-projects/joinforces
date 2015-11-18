@@ -10,11 +10,21 @@ main.idea
       - else
         .user-not-signed-in
           = link_to "Sign in", new_user_session_path
-          |  or 
+          |  or
           = link_to "Register", new_user_registration_path
           |  to comment
 
-    
+
   aside.idea__detail-sidebar
     - if @idea.user == current_user
       = link_to "Delete idea", idea_path(@idea), method: 'delete'
+      br
+
+    - if @user.voted_up_on? @idea
+      = link_to "I Support This", idea_downvote_path(@idea), method: 'get', class: 'selected button'
+    - else
+      = link_to "I Support This", idea_upvote_path(@idea), method: 'get', class: 'button'
+
+    br
+    = "Total Supporters: #{@idea.get_upvotes.size}"
+
