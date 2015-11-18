@@ -37,6 +37,9 @@ group :development, :test do
 
   # for testing
   gem 'rspec-rails'
+
+  # livereload
+  gem 'guard-livereload', require: false
 end
 
 group :test do
