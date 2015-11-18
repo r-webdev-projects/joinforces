@@ -16,6 +16,15 @@ button, .button {
     border-bottom-color: darken(#EEE, 20%);
     border-right-color: darken(#EEE, 20%);
     outline: none;
+
+    &.selected {
+        background: $blue;
+        color: $white;
+
+        &:hover {
+            background: $red;
+        }
+    }
 }
 
 

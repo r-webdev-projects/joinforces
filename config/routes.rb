@@ -15,8 +15,9 @@ Rails.application.routes.draw do
       post 'heart', on: :member
       post 'break_up', on: :member
     end
-    resources :support
     get '/kickoff' => 'ideas#kickoff', as: :kickoff
+    get '/upvote' => 'ideas#upvote', as: :upvote
+    get '/downvote' => 'ideas#downvote', as: :downvote
   end
 
   # Root (homepage)
