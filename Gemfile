@@ -42,6 +42,8 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'faker'
 
+  # livereload
+  gem 'guard-livereload', require: false
 end
 
 group :test do

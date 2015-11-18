@@ -14,10 +14,11 @@
 
 # Ignore config/database.yml
 config/database.yml
-.env
 
-# Ignore local env vars
+
+# Ignore local environment variables
 /config/local_env.yml
+.env
 
 # Ignore vagrant files
 /.vagrant
