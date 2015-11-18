@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   match '/contact' => 'static_pages#contact', via: 'get'
   match '/signup' => 'static_pages#signup', via: 'get'
   match '/login' => 'static_pages#login', via: 'get'
+  match '/no' => 'static_pages#permission_denied', via: 'get', as: 'permission_denied'
 
   # Ideas
   resources :ideas do

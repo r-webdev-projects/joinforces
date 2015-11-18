@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+  <head>
+      <title>Collabor8</title>
+
+      <!-- Gettin' Meta -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <%= csrf_meta_tags %>
+
+      <!-- iOS Icon -->
+      <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+      <!-- Stylesheets -->
+      <%= stylesheet_link_tag 'application', media: 'all' %>
+
+      <!-- Javascript -->
+      <%= javascript_include_tag 'modernizr.min' %>
+      <%= javascript_include_tag :application %>
+
+      <!-- Typography -->
+      <%= javascript_include_tag '//fast.fonts.net/jsapi/17f730b0-1dbf-41b9-8a13-238a39c374cb.js' %>
+
+      <!-- Page specific styles/js -->
+      <%= yield :head %>
+
+  </head>
+  <body class='blank'>
+    <!-- This comment is here to test the Pipeline functionality. -->
+    <div class="container">
+
+      <%= yield %>
+
+    </div>
+  </body>
+</html>
