@@ -15,7 +15,7 @@
           span.icon-twitter
       = link_to 'Edit Profile', edit_user_path(@user), class: 'button user-edit'
       / User interests/skills
-      p = 'ADD INTERESTS/SKILLS' 
+      p = 'ADD INTERESTS/SKILLS'
       / User location
       p = @user.location.present? ? 'Location: ' + @user.location : 'ADD LOCATION'
       / User brief bio
