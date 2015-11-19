@@ -31,6 +31,9 @@ gem 'postmark-rails'
 # For pagination
 gem 'will_paginate', '~> 3.0.6'
 
+# For skills tagging
+gem 'acts-as-taggable-on', '~> 3.4'
+
 group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'

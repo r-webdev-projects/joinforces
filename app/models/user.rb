@@ -11,6 +11,10 @@ class User < ActiveRecord::Base
 
   cattr_accessor :current_user
 
+  # For skills tags
+  acts_as_taggable # basic usage - gives us 'tags'
+  acts_as_taggable_on :skills
+
   # Virtual attribute for authenticating by either username or email
   # This is in addition to a real persisted field like 'username'
   attr_accessor :login
