@@ -11,6 +11,15 @@ module Collabor8
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+    config.before_configuration do
+        env_file = Rails.root.join("config", 'local_env.yml').to_s
+
+        if File.exists?(env_file)
+            YAML.load_file(env_file)[Rails.env].each do |key, value|
+                ENV[key.to_s] = value
+            end # end YAML.load_file
+        end
+    end
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
@@ -28,7 +37,6 @@ module Collabor8
     # To use Postmark (postmarkapp.com) for mailing
     config.action_mailer.delivery_method = :postmark
     config.action_mailer.postmark_settings = { :api_token => ENV['POSTMARK_API_KEY'] }
-
 
   end
 end
