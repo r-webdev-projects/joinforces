@@ -28,6 +28,10 @@ gem 'redcarpet'
 # For mailing
 gem 'postmark-rails'
 
+# For image-uploads
+gem 'paperclip'
+gem 'aws-sdk'
+
 group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
