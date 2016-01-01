@@ -23,3 +23,16 @@ button, .button {
     background: #3c3d41;
     color: #FAFAFA;
 }
+
+input[type='submit'].upload {
+    background-color: transparentize(#FFF, 1);
+    background-image: image-url('upload.gif');
+    background-size: auto 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border: none;
+    display: block;
+    text-indent: -9999px;
+    width: 125px;
+    height: 40px;
+}

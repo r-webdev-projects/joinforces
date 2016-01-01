@@ -1,6 +1,11 @@
 main.idea
   aside.idea__detail-sidebar
     .idea__detail-core-team
+
+      - if @idea.image.present?
+        .idea-image
+          = image_tag @idea.image.url
+
       h3 Core Team
 
       .team-member
@@ -28,6 +33,12 @@ main.idea
 
       - if @idea.user == current_user
         = link_to "Delete idea", idea_path(@idea), method: 'delete'
+
+      - if @idea.image.blank? && @idea.user == current_user
+        h3 Upload Image
+        = form_for @idea, url: idea_path, html: { multipart: true } do |form|
+          = form.file_field :image
+          = form.submit 'Upload image', class: 'upload'
 
   section.idea-details
     h1 = @idea.title

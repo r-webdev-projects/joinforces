@@ -30,7 +30,7 @@ gem 'postmark-rails'
 
 # For image-uploads
 gem 'paperclip'
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
 
 group :development, :test do
   gem 'web-console', '~> 2.0'
