@@ -1,17 +1,20 @@
 header.page
   section.content
-    h1 
+    h1
       | Find a product you'd like to work on or
       br
       = link_to "start your own", new_idea_path
-      |  that others can work on with you.  
+      |  that others can work on with you.
 
 main.ideas
   .ideas__listing
     - @ideas.each do |idea|
       .ideas__listing-item
         .ideas__listing-image
-          = image_tag "https://unsplash.it/400/?random"
+          - if idea.image.present?
+            = image_tag idea.image.url
+          - else
+            = image_tag "https://unsplash.it/400/?random"
         .ideas__listing-details
           .avatar.square
             = link_to user_path(idea.user) do
