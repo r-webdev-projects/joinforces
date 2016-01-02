@@ -15,7 +15,10 @@
     // "POSTMARK_API_KEY": "d2157638-e439-4c21-a274-50bb76a490ad",
     // "POSTMARK_INBOUND_ADDRESS": "c6862c01bce5ac54649c04708cae8acc@inbound.postmarkapp.com",
     // "POSTMARK_SMTP_SERVER": "smtp.postmarkapp.com",
-    "SECRET_KEY_BASE": "bb3cf813f91cac74f6985bdb8000d93811e68fdce1a802907178b9ba4b8ee79e985fe00ea73f400bbd317a4a6be532f0de36196c8b8daf4ba307206a557abf91"
+    "SECRET_KEY_BASE": "bb3cf813f91cac74f6985bdb8000d93811e68fdce1a802907178b9ba4b8ee79e985fe00ea73f400bbd317a4a6be532f0de36196c8b8daf4ba307206a557abf91",
+    "S3_BUCKET_NAME": "joinforces-assets",
+    "AWS_ACCESS_KEY_ID": "AKIAIH6EMCRTUCAO7LDQ",
+    "AWS_SECRET_ACCESS_KEY": "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"
   },
   "addons": ["heroku-postgresql:hobby-dev", "papertrail:choklad", "mailtrap:free", "deployhooks:http", "postmark:10k"]
 }
