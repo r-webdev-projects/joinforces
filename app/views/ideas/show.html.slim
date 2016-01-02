@@ -45,7 +45,8 @@ main.idea
     .idea-details__description = markdown(@idea.description)
 
     .comments#comments
-      = render 'comments/comments'
+      - if @comments.size > 0
+        = render 'comments/comments'
       - if user_signed_in?
         = render 'comments/form'
       - else
