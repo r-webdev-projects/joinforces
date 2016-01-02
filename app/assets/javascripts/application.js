@@ -18,3 +18,5 @@
 
 //= require console.image.min
 //= require secrets/console
+
+//= require static_pages/users.js
