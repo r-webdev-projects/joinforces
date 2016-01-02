@@ -25,14 +25,15 @@
     section.user-recent-comments
       h3 = 'Recent Comments'
       / user comments
-      ul
-        .recent-comments
-          = render @comments
+      div.recent-comments
+        ul = render @comments
 
     section.user-projects
-      div.user-project
-        h3 = 'My Projects'
-        / user projects
-        ul
-          - for idea in @user.ideas
-            li = link_to idea.title, idea_path(idea)
+      h3 = 'My Projects'
+      / user projects
+      - for idea in @user.ideas
+        div.user-project
+          div.user-project-image
+            = image_tag "https://unsplash.it/100/?random"
+          div.user-project-summary
+            = link_to idea.title, idea_path(idea)

@@ -57,6 +57,14 @@
   }
 }
 
+.recent-comments {
+  word-wrap: break-word;
+
+  li {
+    border: 1px solid black;
+  }
+}
+
 .user-projects {
   @include col(1/2);
   border: 1px solid $gray;
@@ -64,7 +72,26 @@
   padding: 20px;
 
   h3 {
-    margin: 0;
+    margin: 0 0 20px 0;
+  }
+
+  .user-project {
+    @include col(8/8);
+    margin-top: 10px;
+    border: 1px solid black;
+
+    .user-project-image {
+      @include span(1/5);
+      padding: 5px 0 0 5px;
+      img {
+        width: 100%;
+      }
+    }
+
+    .user-project-summary {
+      @include span(4/5);
+      padding: 5px 0 0 5px;
+    }
   }
 }
 
