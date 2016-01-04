@@ -1,5 +1,5 @@
 source 'http://rubygems.org' # https was preventing bundle from finishing
-ruby ENV['JF_RUBY_VERSION'] || '2.2.1'
+send :ruby, ENV['JF_RUBY_VERSION'] if ENV['JF_RUBY_VERSION']
 
 gem 'rails', '4.2.1'
 gem 'pg'
